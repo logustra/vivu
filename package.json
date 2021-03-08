@@ -1,0 +1,53 @@
+{
+  "name": "vivu",
+  "version": "1.0.0",
+  "description": "A highly scalable vue boilerplate using vite",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "typescript",
+    "atomic-design",
+    "ddd",
+    "spa",
+    "atomic-design-example",
+    "ddd-example",
+    "boilerplate",
+    "vue-boilerplate",
+    "vite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logustra/vivu"
+  },
+  "bugs": "https://github.com/logustra/vivu/issues",
+  "author": "Faizal Andyka",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cp env/env.development .env && vite --mode development",
+    "build": "cp env/env.production .env && vite build --mode production",
+    "serve": "vite preview"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vuedx/typecheck": "^0.6.3",
+    "@vuedx/typescript-plugin-vue": "^0.6.3",
+    "axios": "^0.21.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv-cli": "^4.0.0",
+    "husky": "^5.1.3",
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3",
+    "vite": "^2.0.5",
+    "vue-router": "4",
+    "vuex": "^4.0.0"
+  }
+}
