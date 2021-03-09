@@ -1,15 +1,14 @@
-/**
- * TODO:
- * dynamically read file inside modules
- * using require.context. https://github.com/vitejs/vite/issues/77
- */
-
 import { 
   createRouter,
   createWebHashHistory
 } from 'vue-router'
 
-import home from '@@/Home/router'
+const domainRouterFiles = import.meta.globEager('../src/modules/**/router.ts')
+const domainRoutes: any = []
+
+for (const path in domainRouterFiles) {
+  domainRoutes.push(...domainRouterFiles[path].default)
+}
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -20,7 +19,7 @@ const router = createRouter({
       component: () => import('./views/notFound.vue')
     },
 
-    ...home,
+    ...domainRoutes,
   ]
 })
 
