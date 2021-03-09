@@ -1,5 +1,5 @@
 import * as types from './commonTypes'
-import { CommonState } from '/@/typings/commonTypings'
+import { CommonState } from '@/typings/commonTypings'
 
 export default {
   /**
