@@ -48,7 +48,6 @@
   "include": [
     "src/**/*.ts", 
     "src/**/*.d.ts", 
-    "src/**/*.tsx", 
     "src/**/*.vue"
   ],
 
@@ -56,7 +55,7 @@
     "node_modules",
     "public",
     "commitlint.config.js",
-    "husky.config.js",
+    "postcss.config.js",
     "stylelint.config.js",
     "tailwind.config.js"
   ]

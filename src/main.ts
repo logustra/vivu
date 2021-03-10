@@ -4,11 +4,8 @@ import app from './app.vue'
 import store from './store'
 import router from './router'
 
-/**
- * NOTE:
- * not support HMR yet. https://github.com/vitejs/vite/issues/9
- */
 import './styles/index.scss'
+import './styles/vendors/tailwind.scss'
 
 createApp(app)
   .use(store)
