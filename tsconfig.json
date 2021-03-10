@@ -29,6 +29,7 @@
 
     "paths": {
       "*": ["types/*"],
+      "~~/*": ["../../*"],
       "@/*": ["src/*"],
       "@@/*": ["src/modules/*"],
       "atoms": ["src/components/atoms"],
