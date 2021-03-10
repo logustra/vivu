@@ -23,6 +23,7 @@
   "author": "Faizal Andyka",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "dev": "cp env/env.development .env && vite --mode development",
     "build": "cp env/env.production .env && vite build --mode production",
     "serve": "vite preview",
