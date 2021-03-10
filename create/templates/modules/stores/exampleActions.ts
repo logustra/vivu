@@ -2,7 +2,7 @@ import * as types from './exampleTypes'
 import { API_EXAMPLE } from '~~/constants'
 import { exampleService } from '~~/services'
 
-export default {
+const actions: {[key: string]: Function} = {
   [types.EXAMPLE_REQUEST]: async ({ commit }: { commit: Function }) => {
     commit(types.EXAMPLE_REQUEST)
 
@@ -15,3 +15,5 @@ export default {
     }
   }
 }
+
+export default actions

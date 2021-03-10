@@ -2,20 +2,20 @@ import axios, { AxiosInstance } from 'axios'
 
 export default class Http {
   protected axios: AxiosInstance
-  
+
   /**
-   * @param  {object} axiosConfig
+   * @param  {{}} axiosConfig
    */
-  public constructor (axiosConfig: object) {
+  public constructor (axiosConfig: {}) {
     this.axios = axios.create(axiosConfig)
   }
 
   /**
    * @param  {string} url
-   * @param  {object} params?
-   * @param  {object} config?
+   * @param  {{}} params?
+   * @param  {{}} config?
    */
-  public get (url: string, params?: object, config?: object) {
+  public get (url: string, params?: {}, config?: {}): any {
     try {
       return this.axios.request({
         method: 'get',
@@ -30,9 +30,9 @@ export default class Http {
 
   /**
    * @param  {string} url
-   * @param  {object} data
+   * @param  {{}} data
    */
-  public post (url: string, data: object) {
+  public post (url: string, data: {}): any {
     try {
       return this.axios.request({
         method: 'post',
@@ -46,9 +46,9 @@ export default class Http {
 
   /**
    * @param  {string} url
-   * @param  {object} data
+   * @param  {{}} data
    */
-  public put (url: string, data: object) {
+  public put (url: string, data: {}): any {
     try {
       return this.axios.request({
         method: 'put',
@@ -62,9 +62,9 @@ export default class Http {
 
   /**
    * @param  {string} url
-   * @param  {object} data
+   * @param  {{}} data
    */
-  public patch (url: string, data: object) {
+  public patch (url: string, data: {}): any {
     try {
       return this.axios.request({
         method: 'patch',
@@ -75,11 +75,11 @@ export default class Http {
       throw error
     }
   }
-  
+
   /**
    * @param  {string} url
    */
-  public delete (url: string) {
+  public delete (url: string): any {
     try {
       return this.axios.request({
         method: 'delete',

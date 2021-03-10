@@ -1,11 +1,10 @@
 import * as types from './exampleTypes'
-
 import { 
   ExampleState,
   ExampleDataModel
-} from '../../typings/exampleTypings'
+} from '~~/typings/exampleTypings'
 
-export default {
+const mutations: {[key: string]: Function} = {
   [types.EXAMPLE_REQUEST]: (state: ExampleState) => {
     state.isFetching = true
   },
@@ -20,3 +19,5 @@ export default {
     state.isError = response
   }
 }
+
+export default mutations

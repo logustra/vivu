@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import { 
-  defineComponent, 
-  onMounted 
+import {
+  defineComponent,
+  onMounted
 } from 'vue'
 import { useStore } from 'vuex'
 
@@ -18,7 +18,7 @@ export default defineComponent({
     const common = store.getters.common
     const setTitle = (title) => store.dispatch(SET_TITLE, title)
 
-    onMounted (() => {
+    onMounted(() => {
       setTitle('home')
       console.log(common.title)
       console.log(import.meta.env.VITE_APP_ENV)

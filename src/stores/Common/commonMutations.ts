@@ -1,7 +1,7 @@
 import * as types from './commonTypes'
 import { CommonState } from '@/typings/commonTypings'
 
-export default {
+const mutations: {[key: string]: Function} = {
   /**
    * @param  {CommonState} state
    * @param  {string} response
@@ -11,3 +11,5 @@ export default {
     state.title = response
   }
 }
+
+export default mutations

@@ -1,4 +1,4 @@
-import { 
+import {
   createRouter,
   createWebHashHistory
 } from 'vue-router'
@@ -19,7 +19,7 @@ const router = createRouter({
       component: () => import('./views/notFound.vue')
     },
 
-    ...domainRoutes,
+    ...domainRoutes
   ]
 })
 
