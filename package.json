@@ -26,8 +26,12 @@
     "dev": "cp env/env.development .env && vite --mode development",
     "build": "cp env/env.production .env && vite build --mode production",
     "serve": "vite preview",
+    "stylelint": "stylelint --config stylelint.config.js 'src/**/*.{vue,scss}'",
+    "stylelint:fix": "stylelint --config stylelint.config.js --fix 'src/**/*.{vue,scss}'",
     "linter": "eslint -c .eslintrc.js --ext .js,.vue,.ts,.tsx, src",
-    "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts,.tsx, src"
+    "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts,.tsx, src",
+    "lint": "pnpm linter && pnpm stylelint",
+    "lint:fix": "pnpm linter:fix && pnpm stylelint:fix"
   },
   "config": {
     "commitizen": {
@@ -54,12 +58,16 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.7.0",
     "husky": "^5.1.3",
     "sass": "^1.32.8",
     "shelljs": "^0.8.4",
     "standard": "^16.0.3",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-rscss": "^0.4.0",
+    "stylelint-scss": "^3.19.0",
     "typescript": "^4.2.3",
     "vite": "^2.0.5",
     "vue": "^3.0.7",
