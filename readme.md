@@ -1,26 +1,99 @@
-# Vue 3 + Typescript + Vite
+<div align="center">
+  <h2>Vivu</h2>
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+  <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_shield">
+    <img 
+      src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=shield&color=brightgreen" 
+      alt="FOSSA Status"
+    >
+  </a>
 
-## Recommended IDE Setup
+  <a href="https://standardjs.com">
+    <img 
+      src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat" 
+      alt="Code Style"
+    >
+  </a>
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+  <a href="https://github.com/logustra/vivu/releases/tag/v1.0.0">
+    <img 
+      src="https://img.shields.io/static/v1.svg?label=version&message=1.0.0&style=flat&color=brightgreen" 
+      alt="Version"
+    >
+  </a>
 
-### If Using `<script setup>`
+  <a href="http://commitizen.github.io/cz-cli">
+    <img 
+      src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat" 
+      alt="Commitizen"
+    >
+  </a>
+</div>
+<br />
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+## Learn 7AD
+Learn the design patterns [here](https://github.com/logustra/7ad)
 
-## Type Support For `.vue` Imports in TS
+## Requirement
+  - [node.js](http://nodejs.org/)
+  - [nvm](https://github.com/nvm-sh/nvm)
+  - [pnpm](https://pnpm.js.org/en/installation)
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+## Quick Start
 
-### If Using Volar
+```bash
+# install nodejs with specific version
+$ nvm install 12.6.3
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+# using specific nodejs
+$ nvm use 12.6.3
 
-### If Using Vetur
+# clone repository
+$ git clone https://github.com/logustra/vivu.git
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette 5. Search and run "Select TypeScript version" -> "Use workspace version"
+# open folder vivu
+$ cd vivu
+
+# instal packages
+$ pnpm install
+
+# build and serve with vite dev serve
+$ pnpm dev
+```
+
+## How to Create Folder
+A guide how to create a folder using `create-cli`
+
+### Component
+```bash
+# create new atom component with name loading
+$ node create component atoms loading
+```
+
+### Module
+```bash
+# create new module with name home and with all types
+$ node create module home all
+```
+
+## How to Contribute
+I'm delighted that you're helping make this open source project better. Here are a few quick guidelines to make this an easier and better process for everyone.
+
+### Reporting a bug
+First, **make sure the bug hasn't already been reported** by searching GitHub's issues section.
+
+If no existing issue exists, go ahead and create one. **Please be sure to include all of the following**:
+
+1. A clear, descriptive title (ie. "A bug" is not a good title).
+2. Include the error message if have.
+3. The browser and OS that you're using.
+
+### Submitting a Pull Request
+1. Fork it
+2. Create your feature branch `git checkout -b new-feature`
+3. Commit your changes `git commit -m "Add some feature"`
+4. Push to the branch `git push origin new-feature`
+5. Create new Pull Request
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_large)
