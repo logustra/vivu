@@ -275,25 +275,25 @@ const createModule = {
 }
 
 const actions = {
-  'atom': componentName => {
+  'atoms': componentName => {
     name = componentName
 
     createComponent.default('atoms')
   },
 
-  'molecule': componentName => {
+  'molecules': componentName => {
     name = componentName
 
     createComponent.default('molecules')
   },
 
-  'organism': componentName => {
+  'organisms': componentName => {
     name = componentName
 
     createComponent.default('organisms')
   },
 
-  'template': componentName => {
+  'templates': componentName => {
     name = componentName
 
     createComponent.default('templates')

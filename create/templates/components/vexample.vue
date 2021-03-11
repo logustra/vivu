@@ -6,22 +6,27 @@
 
 <script lang="ts">
 import { 
-  Vue, 
-  Component 
-} from 'vue-property-decorator'
+  defineComponent,
+  onMounted
+} from 'vue'
 
-const Props = Vue.extend({
+export default defineComponent({
+  name: 'VExample',
+
   props: {
     example: {
       type: String,
       required: true,
       default: ''
     }
+  },
+
+  setup (props) {
+    onMounted (() => {
+      console.log(props.example)
+    })
   }
 })
-
-@Component
-export default class VExample extends Props {}
 </script>
 
 <style lang="scss">
