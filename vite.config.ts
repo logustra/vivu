@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import ViteComponents from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
+import ViteWindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
   plugins: [
@@ -22,6 +23,12 @@ export default defineConfig({
     }),
 
     ViteIcons(),
+
+    /**
+     * NOTE:
+     * on-demand tailwindcss
+     */
+    ViteWindiCSS(),
   ],
 
   resolve: {
