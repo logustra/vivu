@@ -5,6 +5,7 @@ import store from './store'
 import router from './router'
 
 import 'virtual:windi.css'
+import './styles/vendors/nprogress.scss'
 import './styles/index.scss'
 
 createApp(app)

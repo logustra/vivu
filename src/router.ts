@@ -3,6 +3,8 @@ import {
   createWebHashHistory
 } from 'vue-router'
 
+import { routerGuard } from '@/utils'
+
 const domainRouterFiles = import.meta.globEager('../src/modules/**/router.ts')
 const domainRoutes: any = []
 
@@ -23,4 +25,4 @@ const router = createRouter({
   ]
 })
 
-export default router
+export default routerGuard(router)

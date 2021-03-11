@@ -49,6 +49,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typecheck": "^0.6.3",
     "@vuedx/typescript-plugin-vue": "^0.6.3",
+    "@vueuse/integrations": "^4.3.5",
     "axios": "^0.21.1",
     "camelcase": "^6.2.0",
     "chalk": "^4.1.0",

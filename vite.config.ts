@@ -39,7 +39,8 @@ export default defineConfig({
     include: [
       'vue',
       'vuex',
-      'vue-router'
+      'vue-router',
+      '@vueuse/integrations'
     ],
   },
 
