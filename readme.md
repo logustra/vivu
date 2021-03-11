@@ -54,10 +54,13 @@ $ git clone https://github.com/logustra/vivu.git
 # open folder vivu
 $ cd vivu
 
-# instal packages
+# install packages
 $ pnpm install
 
-# build and serve with vite dev serve
+# install git hooks
+$ pnpm prepare
+
+# build and serve with vite dev server
 $ pnpm dev
 ```
 
