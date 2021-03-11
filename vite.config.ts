@@ -31,6 +31,18 @@ export default defineConfig({
     ViteWindiCSS(),
   ],
 
+  /**
+   * NOTE:
+   * dependency pre-bundling
+   */
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vuex',
+      'vue-router'
+    ],
+  },
+
   resolve: {
     alias: [
       {
