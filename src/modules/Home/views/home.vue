@@ -1,5 +1,8 @@
 <template>
-  <div>Bismillah, Hello Vue</div>
+  <div>
+    Bismillah, Hello Vue
+    <IconAccessibility />
+  </div>
 </template>
 
 <script lang="ts">
@@ -11,8 +14,15 @@ import { useStore } from 'vuex'
 
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 
+import IconAccessibility from '/@vite-icons/cil/globe-alt'
+
 export default defineComponent({
   name: 'Home',
+
+  components: {
+    IconAccessibility
+  },
+
   setup () {
     const store = useStore()
     const common = store.getters.common

@@ -1,6 +1,7 @@
 devDependencies:
   '@commitlint/cli': 12.0.1
   '@commitlint/config-conventional': 12.0.1
+  '@iconify/json': 1.1.314
   '@typescript-eslint/eslint-plugin': 4.17.0_3641211d697b4d4d12940eb9cf33dc28
   '@typescript-eslint/parser': 4.17.0_eslint@7.21.0+typescript@4.2.3
   '@vitejs/plugin-vue': 1.1.5_@vue+compiler-sfc@3.0.7
@@ -34,6 +35,7 @@ devDependencies:
   tailwindcss: 2.0.3_caf414ac65a978d0d57907a0ec9fb41e
   typescript: 4.2.3
   vite: 2.0.5
+  vite-plugin-icons: 0.3.2_70f20bcde5195e446154db5ed4ff8b90
   vue: 3.0.7
   vue-eslint-parser: 7.6.0_eslint@7.21.0
   vue-router: 4.0.4_vue@3.0.7
@@ -459,6 +461,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-kwOXw8fZ0Lt1QmeOOrd+o4Ibvp4UTEBFQbzvWldjlKv5n+G9sXfIPn1hh63IQIL8K8vbvv1oYMJiIUbuy9bGaA==
+  /@iconify/json-tools/1.0.10:
+    dev: true
+    resolution:
+      integrity: sha512-LFelJDOLZ6JHlmlAkgrvmcu4hpNPB91KYcr4f60D/exzU1eNOb4/KCVHIydGHIQFaOacIOD+Xy+B7P1z812cZg==
+  /@iconify/json/1.1.314:
+    dev: true
+    resolution:
+      integrity: sha512-KDc2dtNnbUryuUWs4ov1e8xCcEjrU/9r3PLOsElzsRpMjaGe/RfpAvU1NkDlv7Mmriaah+Dj6SVoLeRSUB5q3g==
   /@intlify/core-base/9.0.0:
     dependencies:
       '@intlify/message-compiler': 9.0.0
@@ -5812,6 +5822,19 @@ packages:
     dev: true
     resolution:
       integrity: sha512-O6AE4OskCG5S1emQ/4gl8zK586RqA3srz3nfK/Viy0UPToBc5Trp9BVFb1u0CjsKrAWwnpr4ifM/KBXPWwJbCA==
+  /vite-plugin-icons/0.3.2_70f20bcde5195e446154db5ed4ff8b90:
+    dependencies:
+      '@iconify/json': 1.1.314
+      '@iconify/json-tools': 1.0.10
+      '@vue/compiler-sfc': 3.0.7_vue@3.0.7
+      vue-template-es2015-compiler: 1.9.1
+    dev: true
+    peerDependencies:
+      '@iconify/json': '*'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+    resolution:
+      integrity: sha512-6HDBO6aqJLaJ8lkT9FChAUtniRRzhDWbhNzJLfT7QdDcQ2kaapReksngNEA1+tNlFd5Auey4VGS2VjI3V1KkvA==
   /vite/2.0.5:
     dependencies:
       esbuild: 0.8.57
@@ -5862,6 +5885,10 @@ packages:
       vue: ^3.0.0
     resolution:
       integrity: sha512-uN6PDEaYdU9aRO7mU+Dkr1uaY49hV3fucEDG/Vre/Qj8ct3RoJS16vcPrvKVzn69zDDjBV5b9Xw7fZA9r6b/Iw==
+  /vue-template-es2015-compiler/1.9.1:
+    dev: true
+    resolution:
+      integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
   /vue/3.0.7:
     dependencies:
       '@vue/compiler-dom': 3.0.7
@@ -6006,6 +6033,7 @@ packages:
 specifiers:
   '@commitlint/cli': ^12.0.1
   '@commitlint/config-conventional': ^12.0.1
+  '@iconify/json': ^1.1.314
   '@typescript-eslint/eslint-plugin': ^4.17.0
   '@typescript-eslint/parser': ^4.17.0
   '@vitejs/plugin-vue': ^1.1.5
@@ -6039,6 +6067,7 @@ specifiers:
   tailwindcss: ^2.0.3
   typescript: ^4.2.3
   vite: ^2.0.5
+  vite-plugin-icons: ^0.3.2
   vue: ^3.0.7
   vue-eslint-parser: ^7.6.0
   vue-router: '4'

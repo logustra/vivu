@@ -34,6 +34,7 @@ module.exports = {
     'no-prototype-builtins': 'off',
     'no-unused-expressions': 'off',
     'no-useless-escape': 'off',
+    'import/no-absolute-path': 'off',
 
     // typescript
     '@typescript-eslint/ban-types': 'off',
