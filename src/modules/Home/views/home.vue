@@ -1,7 +1,7 @@
 <template>
   <div>
     Bismillah, Hello Vue
-    <IconAccessibility />
+    <CilGlobeAlt />
   </div>
 </template>
 
@@ -14,14 +14,8 @@ import { useStore } from 'vuex'
 
 import { SET_TITLE } from '@/stores/Common/commonTypes'
 
-import IconAccessibility from '/@vite-icons/cil/globe-alt'
-
 export default defineComponent({
   name: 'Home',
-
-  components: {
-    IconAccessibility
-  },
 
   setup () {
     const store = useStore()

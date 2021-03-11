@@ -1,11 +1,26 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import ViteIcons from 'vite-plugin-icons'
+import ViteComponents from 'vite-plugin-components'
+import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 
 export default defineConfig({
   plugins: [
     Vue(),
+
+    /**
+     * NOTE:
+     * auto import components
+     */
+    ViteComponents({
+      customComponentResolvers: [
+        ViteIconsResolver({
+          componentPrefix: '',
+          enabledCollections: ['cil']
+        }),
+      ],
+    }),
+
     ViteIcons(),
   ],
 

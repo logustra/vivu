@@ -35,6 +35,7 @@ devDependencies:
   tailwindcss: 2.0.3_caf414ac65a978d0d57907a0ec9fb41e
   typescript: 4.2.3
   vite: 2.0.5
+  vite-plugin-components: 0.8.0_vite@2.0.5
   vite-plugin-icons: 0.3.2_70f20bcde5195e446154db5ed4ff8b90
   vue: 3.0.7
   vue-eslint-parser: 7.6.0_eslint@7.21.0
@@ -520,6 +521,19 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-0r4v7dnY8g/Jfx2swUWy2GyfH/WvIpWvkU4OIupvxDTWiE8RhcpbOCVvqpVh/xGi0proHQ/r2Dhc0QSItUsfDQ==
+  /@knightly/fast-glob/3.2.5-knightly-master.202101180131:
+    dependencies:
+      '@nodelib/fs.stat': 2.0.4
+      '@nodelib/fs.walk': 1.2.6
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.2
+      picomatch: 2.2.2
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-zf9RptV5EYbjpfrOB3EYA2M2QhTuM0fnU0OxmLrcOAKLmBzJ0p/2910I1sS2U5XjXIzV4N2/It95ztLedz4/+A==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -1763,6 +1777,19 @@ packages:
         optional: true
     resolution:
       integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+  /debug/4.3.2:
+    dependencies:
+      ms: 2.1.2
+    dev: true
+    engines:
+      node: '>=6.0'
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    resolution:
+      integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   /decamelize-keys/1.1.0:
     dependencies:
       decamelize: 1.2.0
@@ -5822,6 +5849,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-O6AE4OskCG5S1emQ/4gl8zK586RqA3srz3nfK/Viy0UPToBc5Trp9BVFb1u0CjsKrAWwnpr4ifM/KBXPWwJbCA==
+  /vite-plugin-components/0.8.0_vite@2.0.5:
+    dependencies:
+      chokidar: 3.5.1
+      debug: 4.3.2
+      fast-glob: /@knightly/fast-glob/3.2.5-knightly-master.202101180131
+      minimatch: 3.0.4
+      vite: 2.0.5
+    dev: true
+    peerDependencies:
+      vite: ^2.0.0-beta.69
+    resolution:
+      integrity: sha512-VpYIffUxj1CiBUok41xJJV2dc9tI7MSrHM7oSJKSD0CT5SKwxXh+T+WesEP1Ey42vlofup0Lovwmk648Ms/vuw==
   /vite-plugin-icons/0.3.2_70f20bcde5195e446154db5ed4ff8b90:
     dependencies:
       '@iconify/json': 1.1.314
@@ -6067,6 +6106,7 @@ specifiers:
   tailwindcss: ^2.0.3
   typescript: ^4.2.3
   vite: ^2.0.5
+  vite-plugin-components: ^0.8.0
   vite-plugin-icons: ^0.3.2
   vue: ^3.0.7
   vue-eslint-parser: ^7.6.0
