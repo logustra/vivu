@@ -1,4 +1,4 @@
-import path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import ViteIcons from 'vite-plugin-icons'
@@ -13,31 +13,31 @@ export default defineConfig({
     alias: [
       {
         find: '~~',
-        replacement: path.resolve(__dirname, '../..')
+        replacement: resolve(__dirname, '../..')
       },
       {
         find: '@',
-        replacement: path.resolve(__dirname, './src')
+        replacement: resolve(__dirname, './src')
       },
       {
         find: '@@',
-        replacement: path.resolve(__dirname, './src/modules')
+        replacement: resolve(__dirname, './src/modules')
       },
       {
         find: 'atoms',
-        replacement: path.resolve(__dirname, './src/components/atoms')
+        replacement: resolve(__dirname, './src/components/atoms')
       },
       {
         find: 'molecules',
-        replacement: path.resolve(__dirname, './src/components/molecules')
+        replacement: resolve(__dirname, './src/components/molecules')
       },
       {
         find: 'organisms',
-        replacement: path.resolve(__dirname, './src/components/organisms')
+        replacement: resolve(__dirname, './src/components/organisms')
       },
       {
         find: 'templates',
-        replacement: path.resolve(__dirname, './src/components/templates')
+        replacement: resolve(__dirname, './src/components/templates')
       },
     ]
   }
