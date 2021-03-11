@@ -27,7 +27,10 @@ module.exports = {
   ],
 
   rules: {
-    // javascript
+    /**
+     * NOTE:
+     * javascript custom rules
+     */
     'no-undef': 'off',
     'no-return-assign': 'off',
     'no-useless-catch': 'off',
@@ -36,7 +39,10 @@ module.exports = {
     'no-useless-escape': 'off',
     'import/no-absolute-path': 'off',
 
-    // typescript
+    /**
+     * NOTE:
+     * typescript custom rules
+     */
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
@@ -86,7 +92,10 @@ module.exports = {
       }
     }],
 
-    // vue
+    /**
+     * NOTE:
+     * vue custom rules
+     */
     'vue/no-unused-vars': 'off',
     'vue/no-v-html': 'off',
     'vue/require-default-prop': 'error',

@@ -1,7 +1,7 @@
 <template>
   <div>
-    Bismillah, Hello Vue
-    <CilGlobeAlt />
+    Bismillah, Hello World!
+    <CilGlobeAlt class="inline" />
   </div>
 </template>
 

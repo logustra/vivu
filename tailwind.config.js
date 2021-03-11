@@ -6,7 +6,7 @@ module.exports = {
     './src/**/*.{vue,js,ts}'
   ],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     screens: {
       sm: '640px',
