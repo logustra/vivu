@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import ViteComponents from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
+import ViteFonts from 'vite-plugin-fonts'
 import ViteWindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
@@ -23,6 +24,16 @@ export default defineConfig({
     }),
 
     ViteIcons(),
+
+    /**
+     * DESC:
+     * auto injection fonts
+     */
+    ViteFonts({
+      google: {
+        families: ['Source Sans Pro']
+      },
+    }),
 
     /**
      * DESC:

@@ -33,6 +33,7 @@ devDependencies:
   typescript: 4.2.3
   vite: 2.0.5
   vite-plugin-components: 0.8.0_vite@2.0.5
+  vite-plugin-fonts: 0.1.5_vite@2.0.5
   vite-plugin-icons: 0.3.2_70f20bcde5195e446154db5ed4ff8b90
   vite-plugin-windicss: 0.7.2_vite@2.0.5
   vue: 3.0.7
@@ -5771,6 +5772,14 @@ packages:
       vite: ^2.0.0-beta.69
     resolution:
       integrity: sha512-VpYIffUxj1CiBUok41xJJV2dc9tI7MSrHM7oSJKSD0CT5SKwxXh+T+WesEP1Ey42vlofup0Lovwmk648Ms/vuw==
+  /vite-plugin-fonts/0.1.5_vite@2.0.5:
+    dependencies:
+      vite: 2.0.5
+    dev: true
+    peerDependencies:
+      vite: ^2.0.0-beta.22
+    resolution:
+      integrity: sha512-yF9Q1OVRGijlgUe8VXkAEGon+3tIAfeFtzOFBUpSDp5OmMVFMwt40Jy/7qMbVmu9tAV1OeCAK1uaUZgjQE5QPg==
   /vite-plugin-icons/0.3.2_70f20bcde5195e446154db5ed4ff8b90:
     dependencies:
       '@iconify/json': 1.1.314
@@ -6084,6 +6093,7 @@ specifiers:
   typescript: ^4.2.3
   vite: ^2.0.5
   vite-plugin-components: ^0.8.0
+  vite-plugin-fonts: ^0.1.5
   vite-plugin-icons: ^0.3.2
   vite-plugin-windicss: ^0.7.2
   vue: ^3.0.7
