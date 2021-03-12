@@ -28,7 +28,7 @@ module.exports = {
 
   rules: {
     /**
-     * NOTE:
+     * DESC:
      * javascript custom rules
      */
     'no-undef': 'off',
@@ -40,7 +40,7 @@ module.exports = {
     'import/no-absolute-path': 'off',
 
     /**
-     * NOTE:
+     * DESC:
      * typescript custom rules
      */
     '@typescript-eslint/ban-types': 'off',
@@ -93,7 +93,7 @@ module.exports = {
     }],
 
     /**
-     * NOTE:
+     * DESC:
      * vue custom rules
      */
     'vue/no-unused-vars': 'off',

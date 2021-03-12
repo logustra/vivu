@@ -10,7 +10,7 @@ export default defineConfig({
     Vue(),
 
     /**
-     * NOTE:
+     * DESC:
      * auto import components
      */
     ViteComponents({
@@ -25,14 +25,14 @@ export default defineConfig({
     ViteIcons(),
 
     /**
-     * NOTE:
+     * DESC:
      * on-demand tailwindcss
      */
     ViteWindiCSS(),
   ],
 
   /**
-   * NOTE:
+   * DESC:
    * dependency pre-bundling
    */
   optimizeDeps: {

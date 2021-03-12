@@ -17,7 +17,7 @@ module.exports = {
     }],
 
     /**
-     * NOTE:
+     * DESC:
      * rscss custom rules
      */
     'rscss/no-descendant-combinator': false
