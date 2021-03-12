@@ -6,10 +6,7 @@ const { start, done } = useNProgress(null, {
 
 const routerGuard: Function = (router: any) => {
   router.beforeResolve((to: any, from: any, next: any) => {
-    if (to.path) {
-      start()
-    }
-
+    if (to.path) start()
     next()
   })
 
