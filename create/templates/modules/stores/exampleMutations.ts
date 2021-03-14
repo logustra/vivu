@@ -2,7 +2,7 @@ import * as types from './exampleTypes'
 import { 
   ExampleState,
   ExampleDataModel
-} from '~~/typings/exampleTypings'
+} from '../../typings/exampleTypings'
 
 const mutations: {[key: string]: Function} = {
   [types.EXAMPLE_REQUEST]: (state: ExampleState) => {

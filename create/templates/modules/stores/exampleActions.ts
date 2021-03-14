@@ -1,6 +1,6 @@
 import * as types from './exampleTypes'
-import { API_EXAMPLE } from '~~/constants'
-import { exampleService } from '~~/services'
+import { API_EXAMPLE } from '../../constants'
+import { exampleService } from '../../services'
 
 const actions: {[key: string]: Function} = {
   [types.EXAMPLE_REQUEST]: async ({ commit }: { commit: Function }) => {

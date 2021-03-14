@@ -29,7 +29,6 @@
 
     "paths": {
       "*": ["types/*"],
-      "~~/*": ["../../*"],
       "@/*": ["src/*"],
       "@@/*": ["src/modules/*"],
       "atoms": ["src/components/atoms"],
@@ -55,8 +54,6 @@
     "node_modules",
     "public",
     "commitlint.config.js",
-    "postcss.config.js",
-    "stylelint.config.js",
-    "tailwind.config.js"
+    "stylelint.config.js"
   ]
 }
