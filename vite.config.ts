@@ -4,7 +4,6 @@ import Vue from '@vitejs/plugin-vue'
 import ViteComponents from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
-import ViteWindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
   plugins: [
@@ -34,12 +33,6 @@ export default defineConfig({
         families: ['Source Sans Pro']
       },
     }),
-
-    /**
-     * DESC:
-     * on-demand tailwindcss
-     */
-    ViteWindiCSS(),
   ],
 
   /**

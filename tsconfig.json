@@ -54,6 +54,8 @@
     "node_modules",
     "public",
     "commitlint.config.js",
-    "stylelint.config.js"
+    "postcss.config.js",
+    "stylelint.config.js",
+    "tailwind.config.js"
   ]
 }
