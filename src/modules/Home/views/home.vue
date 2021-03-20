@@ -1,7 +1,12 @@
 <template>
-  <div>
-    Bismillah, Hello World!
-    <CilGlobeAlt class="inline" />
+  <div class="flex justify-center items-center flex-col">
+    <div>
+      Bismillah, Hello World!
+      <CilGlobeAlt class="inline" />
+    </div>
+    <ElButton>
+      👋
+    </ElButton>
   </div>
 </template>
 

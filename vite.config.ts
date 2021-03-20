@@ -1,9 +1,10 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import ViteComponents from 'vite-plugin-components'
+import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
+import ViteImport from 'vite-plugin-importer'
 
 export default defineConfig({
   plugins: [
@@ -15,10 +16,20 @@ export default defineConfig({
      */
     ViteComponents({
       customComponentResolvers: [
+        /**
+         * DESC:
+         * auto import iconify
+         */
         ViteIconsResolver({
           componentPrefix: '',
           enabledCollections: ['cil']
         }),
+
+        /**
+         * DESC:
+         * auto import element-plus
+         */
+        ElementPlusResolver()
       ],
     }),
 
@@ -33,6 +44,15 @@ export default defineConfig({
         families: ['Source Sans Pro']
       },
     }),
+
+    /**
+     * DESC:
+     * on-demand element-plus
+     */
+    ViteImport({
+      libraryName: 'element-plus',
+      style: true
+    })
   ],
 
   /**
