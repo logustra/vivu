@@ -5,14 +5,14 @@ const program = new Command()
 const camelCase = require('camelcase')
 const pkg = require('../package.json') 
 
-const COMPONENTS = [
+const COMPONENT_TYPES = [
   'atoms', 
   'molecules', 
   'organisms', 
   'templates', 
 ]
 
-const MODULES = [
+const MODULE_TYPES = [
   'all', 
   'components', 
   'constants', 
@@ -324,8 +324,8 @@ program
   .command('component [type] [name]')
   .description('command to generate component')
   .action((type, name) => {
-    COMPONENTS.map(component => {
-      if (component === type) actions[type](name)
+    COMPONENT_TYPES.map(componentType => {
+      if (componentType === type) actions[type](name)
     })
   })
 
@@ -333,8 +333,8 @@ program
   .command('module [name] [type]')
   .description('command to generate module')
   .action((name, type) => {
-    MODULES.map(module => {
-      if (module === type) actions.module(name, type)
+    MODULE_TYPES.map(moduleType => {
+      if (moduleType === type) actions.module(name, type)
     })
   })
 
