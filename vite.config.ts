@@ -7,6 +7,11 @@ import ViteFonts from 'vite-plugin-fonts'
 import ViteImport from 'vite-plugin-importer'
 
 export default defineConfig({
+  build: {
+    manifest: true,
+    polyfillDynamicImport: true
+  },
+  
   plugins: [
     Vue(),
 
