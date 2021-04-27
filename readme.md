@@ -34,19 +34,38 @@
 ## Learn 7AD
 Learn the design patterns [here](https://github.com/logustra/7ad)
 
+## Features
+- Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
+- Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://github.com/vuejs/vuex), [vue-router](https://github.com/vuejs/vue-router-next)
+- Typescript, of course
+- Auto injecting fonts: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
+- Just in time css utility: [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+- On-demand components auto importing: [iconify](https://github.com/antfu/vite-plugin-icons), [element-plus](https://github.com/element-plus/element-plus)
+- Schema-driven form generation: [formvuelate](https://github.com/formvuelate/formvuelate) (ON PROGRESS)
+- Localization: [i18n](https://github.com/intlify/vue-i18n-next) (ON PROGRESS)
+- Documented components: [storybook](https://github.com/storybookjs/storybook) (ON PROGRESS)
+- Unit test: [jest](https://github.com/facebook/jest) (ON PROGRESS)
+- HTTP request: [axios](https://github.com/axios/axios)
+- Git custom hooks: [husky](https://github.com/typicode/husky)
+- Commit conventions: [commitizen](https://github.com/commitizen/cz-cli)
+- Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [stylelint](https://github.com/stylelint/stylelint)
+- Optimized nginx config (ON PROGRESS)
+- Dockerize (ON PROGRESS)
+
+
 ## Requirement
   - [node.js](http://nodejs.org/)
   - [nvm](https://github.com/nvm-sh/nvm)
   - [pnpm](https://pnpm.js.org/en/installation)
 
-## Quick Start
+## Getting Started
 
 ```bash
 # install nodejs with specific version
-$ nvm install 12.6.3
+$ nvm install 14.16.1
 
 # using specific nodejs
-$ nvm use 12.6.3
+$ nvm use 14.16.1
 
 # clone repository
 $ git clone https://github.com/logustra/vivu.git
