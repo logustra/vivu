@@ -6,20 +6,20 @@ const camelCase = require('camelcase')
 const pkg = require('../package.json') 
 
 const COMPONENT_TYPES = [
-  'atoms', 
-  'molecules', 
-  'organisms', 
-  'templates', 
+  'atoms',
+  'molecules',
+  'organisms',
+  'templates'
 ]
 
 const MODULE_TYPES = [
-  'all', 
-  'components', 
-  'constants', 
-  'services', 
-  'stores', 
-  'typings', 
-  'views', 
+  'all',
+  'components',
+  'constants',
+  'services',
+  'stores',
+  'typings',
+  'views',
   'store',
   'router'
 ]
@@ -28,31 +28,31 @@ let name = 'example'
 
 const templates = {
   components: {
-    default: './create/templates/components/vexample.vue',
+    default: './create/templates/component/vexample.vue',
   },
 
   modules: {
-    components: './create/templates/modules/components/index.ts',
-    constants: './create/templates/modules/constants/index.ts',
-    typings: './create/templates/modules/typings/exampleTypings.ts',
+    components: './create/templates/module/components/index.ts',
+    constants: './create/templates/module/constants/index.ts',
+    typings: './create/templates/module/typings/exampleTypings.ts',
 
     services: [
-      './create/templates/modules/services/exampleService.ts', 
-      './create/templates/modules/services/index.ts'
+      './create/templates/module/services/exampleService.ts',
+      './create/templates/module/services/index.ts'
     ],
 
     stores: [
-      './create/templates/modules/stores/exampleActions.ts', 
-      './create/templates/modules/stores/exampleGetters.ts', 
-      './create/templates/modules/stores/exampleMutations.ts', 
-      './create/templates/modules/stores/exampleState.ts', 
-      './create/templates/modules/stores/exampleTypes.ts', 
-      './create/templates/modules/stores/index.ts'
+      './create/templates/module/stores/exampleActions.ts',
+      './create/templates/module/stores/exampleGetters.ts',
+      './create/templates/module/stores/exampleMutations.ts',
+      './create/templates/module/stores/exampleState.ts',
+      './create/templates/module/stores/exampleTypes.ts',
+      './create/templates/module/stores/index.ts'
     ],
 
-    views: './create/templates/modules/views/exampleIndex.vue',
-    store: './create/templates/modules/store.ts',
-    router: './create/templates/modules/router.ts'
+    views: './create/templates/module/views/exampleIndex.vue',
+    store: './create/templates/module/store.ts',
+    router: './create/templates/module/router.ts'
   }
 }
 
@@ -70,14 +70,14 @@ const createFolder = (type, folder) => {
   let pathModule = ''
   let path = ''
 
-  switch(type) {
-    case 'components': 
-      path = `./src/${type}/${folder}/${camelCase(`v-${name}`, { pascalCase: true })}`
+  switch (type) {
+    case 'component':
+      path = `./src/components/${folder}/${camelCase(`v-${name}`, { pascalCase: true })}`
       if (!checkPath(path)) shell.mkdir(path)
       break
-      
-    case 'modules': 
-      switch(folder) {
+
+    case 'module':
+      switch (folder) {
         case 'stores':
           pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
           pathStores = `${pathModule}/stores`
@@ -88,17 +88,17 @@ const createFolder = (type, folder) => {
           break
 
         case 'store':
-          path = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          path = `./src/modules/${camelCase(name, { pascalCase: true })}`
           if (!checkPath(path)) shell.mkdir(path)
           break
 
         case 'router':
-          path = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          path = `./src/modules/${camelCase(name, { pascalCase: true })}`
           if (!checkPath(path)) shell.mkdir(path)
           break
 
         default: 
-          pathModule = `./src/${type}/${camelCase(name, { pascalCase: true })}`
+          pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
           path = `${pathModule}/${folder}`
           if (!checkPath(pathModule)) shell.mkdir(pathModule)
           if (checkPath(pathModule) && !checkPath(path)) shell.mkdir(path)
@@ -111,10 +111,10 @@ const createFolder = (type, folder) => {
 
 const createComponent = {
   default: folderName => {
-    const folder = `${createFolder('components', folderName)}/`
+    const folder = `${createFolder('component', folderName)}/`
     const file = `v${camelCase(name)}.vue`
     const path = folder + file
-    
+
     if (!checkPath(path)) {
       shell.touch(path)
       shell.exec(`cat ${templates.components.default} > ${path}`)
@@ -128,7 +128,7 @@ const createComponent = {
 
 const createModule = {
   components: () => {
-    const folder = `${createFolder('modules', 'components')}/`
+    const folder = `${createFolder('module', 'components')}/`
     const file = 'index.ts'
     const path = folder + file
 
@@ -143,7 +143,7 @@ const createModule = {
   },
 
   constants: () => {
-    const folder = `${createFolder('modules', 'constants')}/`
+    const folder = `${createFolder('module', 'constants')}/`
     const file = 'index.ts'
     const path = folder + file
 
@@ -158,7 +158,7 @@ const createModule = {
   },
 
   typings: () => {
-    const folder = `${createFolder('modules', 'typings')}/`
+    const folder = `${createFolder('module', 'typings')}/`
     const file = `${camelCase(name)}Typings.ts`
     const path = folder + file
 
@@ -173,7 +173,7 @@ const createModule = {
   },
 
   services: () => {
-    const folder = `${createFolder('modules', 'services')}/`
+    const folder = `${createFolder('module', 'services')}/`
     const file = [
       `${camelCase(name)}Service.ts`,
       'index.ts'
@@ -199,7 +199,7 @@ const createModule = {
   },
 
   stores: () => {
-    const folder = `${createFolder('modules', 'stores')}/`
+    const folder = `${createFolder('module', 'stores')}/`
     const file = [
       `${camelCase(name)}Actions.ts`,
       `${camelCase(name)}Getters.ts`,
@@ -229,7 +229,7 @@ const createModule = {
   },
 
   views: () => {
-    const folder = `${createFolder('modules', 'views')}/`
+    const folder = `${createFolder('module', 'views')}/`
     const file = `${camelCase(name)}Index.vue`
     const path = folder + file
 
@@ -244,7 +244,7 @@ const createModule = {
   },
 
   store: () => {
-    const folder = `${createFolder('modules', 'store')}/`
+    const folder = `${createFolder('module', 'store')}/`
     const file = 'store.ts'
     const path = folder + file
 
@@ -259,7 +259,7 @@ const createModule = {
   },
 
   router: () => {
-    const folder = `${createFolder('modules', 'router')}/`
+    const folder = `${createFolder('module', 'router')}/`
     const file = 'router.ts'
     const path = folder + file
 
@@ -275,31 +275,27 @@ const createModule = {
 }
 
 const actions = {
-  'atoms': componentName => {
+  atoms: componentName => {
     name = componentName
-
     createComponent.default('atoms')
   },
 
-  'molecules': componentName => {
+  molecules: componentName => {
     name = componentName
-
     createComponent.default('molecules')
   },
 
-  'organisms': componentName => {
+  organisms: componentName => {
     name = componentName
-
     createComponent.default('organisms')
   },
 
-  'templates': componentName => {
+  templates: componentName => {
     name = componentName
-
     createComponent.default('templates')
   },
 
-  'module': (moduleName, moduleType) => {
+  module: (moduleName, moduleType) => {
     name = moduleName
 
     if (moduleType === 'all') {
@@ -324,7 +320,7 @@ program
   .command('component [type] [name]')
   .description('command to generate component')
   .action((type, name) => {
-    COMPONENT_TYPES.map(componentType => {
+    COMPONENT_TYPES.forEach(componentType => {
       if (componentType === type) actions[type](name)
     })
   })
@@ -333,7 +329,7 @@ program
   .command('module [name] [type]')
   .description('command to generate module')
   .action((name, type) => {
-    MODULE_TYPES.map(moduleType => {
+    MODULE_TYPES.forEach(moduleType => {
       if (moduleType === type) actions.module(name, type)
     })
   })
