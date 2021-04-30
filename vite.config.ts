@@ -5,16 +5,23 @@ import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteImport from 'vite-plugin-importer'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
-export default defineConfig({
-  build: {
-    manifest: true,
-    polyfillDynamicImport: true
-  },
+export default defineConfig(({ mode }) => {
+  const isLocal = mode === 'localhost'
+  const isDev = mode === 'development'
+  const isProd = mode === 'production'
+  const isReport = mode === 'report'
 
-  plugins: [
+  let build = {}
+  if (isDev || isProd) {
+    build = {
+      manifest: true,
+      polyfillDynamicImport: true
+    }
+  }
+
+  const plugins = [
     Vue(),
 
     /**
@@ -59,66 +66,70 @@ export default defineConfig({
     ViteImport({
       libraryName: 'element-plus',
       style: true
-    }),
-
-    /**
-     * DESC:
-     * localization
-     */
-    VueI18n({
-      include: [resolve(__dirname, 'locales/**')]
-    }),
-
-    /**
-     * DESC:
-     * visualize bundle
-     */
-    ViteVisualizer({
-      filename: './dist/report.html',
-      open: true,
-      brotliSize: true
     })
-  ],
+  ]
 
-  /**
-   * DESC:
-   * dependency pre-bundling
-   */
-  optimizeDeps: {
-    include: [
-      'vue',
-      'vuex',
-      'vue-router',
-      '@vueuse/integrations'
-    ]
-  },
+  if (isReport) {
+    plugins.push(
+      /**
+       * DESC:
+       * visualize bundle
+       */
+      ViteVisualizer({
+        filename: './dist/report.html',
+        open: true,
+        brotliSize: true
+      })
+    )
+  }
 
-  resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: resolve(__dirname, './src')
-      },
-      {
-        find: '@@',
-        replacement: resolve(__dirname, './src/modules')
-      },
-      {
-        find: 'atoms',
-        replacement: resolve(__dirname, './src/components/atoms')
-      },
-      {
-        find: 'molecules',
-        replacement: resolve(__dirname, './src/components/molecules')
-      },
-      {
-        find: 'organisms',
-        replacement: resolve(__dirname, './src/components/organisms')
-      },
-      {
-        find: 'templates',
-        replacement: resolve(__dirname, './src/components/templates')
-      }
-    ]
+  let optimizeDeps = {}
+  if (isLocal) {
+    /**
+     * DESC:
+     * dependency pre-bundling
+     */
+    optimizeDeps = {
+      include: [
+        'vue',
+        'vuex',
+        'vue-router',
+        '@vueuse/integrations'
+      ]
+    }
+  }
+
+  return {
+    build,
+    plugins,
+    optimizeDeps,
+    resolve: {
+      alias: [
+        {
+          find: '@',
+          replacement: resolve(__dirname, './src')
+        },
+        {
+          find: '@@',
+          replacement: resolve(__dirname, './src/modules')
+        },
+        {
+          find: 'atoms',
+          replacement: resolve(__dirname, './src/components/atoms')
+        },
+        {
+          find: 'molecules',
+          replacement: resolve(__dirname, './src/components/molecules')
+        },
+        {
+          find: 'organisms',
+          replacement: resolve(__dirname, './src/components/organisms')
+        },
+        {
+          find: 'templates',
+          replacement: resolve(__dirname, './src/components/templates')
+        }
+      ]
+    }
   }
 })

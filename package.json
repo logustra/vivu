@@ -25,8 +25,10 @@
   "scripts": {
     "prepare": "husky install",
     "clean:dist": "rimraf dist",
-    "dev": "cp env/env.development .env && vite --mode development",
-    "build": "pnpm clean:dist && cp env/env.production .env && vite build --mode production",
+    "dev": "cp env/env.dev .env && vite --mode localhost",
+    "build:dev": "pnpm clean:dist && cp env/env.dev .env && vite build --mode development",
+    "build:prod": "pnpm clean:dist && cp env/env.prod .env && vite build --mode production",
+    "build:report": "pnpm clean:dist && cp env/env.prod .env && vite build --mode report",
     "serve": "vite preview",
     "stylelint": "stylelint --config stylelint.config.js 'src/**/*.{vue,scss}'",
     "stylelint:fix": "stylelint --config stylelint.config.js --fix 'src/**/*.{vue,scss}'",
