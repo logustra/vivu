@@ -5,6 +5,8 @@ import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteImport from 'vite-plugin-importer'
+import ViteI18n from '@intlify/vite-plugin-vue-i18n'
+import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
@@ -66,7 +68,22 @@ export default defineConfig(({ mode }) => {
     ViteImport({
       libraryName: 'element-plus',
       style: true
-    })
+    }),
+
+    /**
+     * DESC:
+     * localization
+     */
+    ViteI18n({
+      include: [resolve(__dirname, 'locales/**')],
+      runtimeOnly: false
+    }),
+
+    /**
+     * DESC:
+     * converts YAML files to ES6 modules
+     */
+    ViteYaml()
   ]
 
   if (isReport) {

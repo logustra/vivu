@@ -34,7 +34,7 @@ const templates = {
   modules: {
     components: './create/templates/module/components/index.ts',
     constants: './create/templates/module/constants/index.ts',
-    typings: './create/templates/module/typings/exampleTypings.ts',
+    locales: './create/templates/module/locales/example.en.yaml',
 
     services: [
       './create/templates/module/services/exampleService.ts',
@@ -50,9 +50,11 @@ const templates = {
       './create/templates/module/stores/index.ts'
     ],
 
+    typings: './create/templates/module/typings/exampleTypings.ts',
     views: './create/templates/module/views/exampleIndex.vue',
-    store: './create/templates/module/store.ts',
-    router: './create/templates/module/router.ts'
+    locale: './create/templates/module/locale.ts',
+    router: './create/templates/module/router.ts',
+    store: './create/templates/module/store.ts'
   }
 }
 
@@ -87,17 +89,14 @@ const createFolder = (type, folder) => {
           if (checkPath(pathModule) && checkPath(pathStores) && !checkPath(path)) shell.mkdir(path)
           break
 
+        case 'locale':
+        case 'router':
         case 'store':
           path = `./src/modules/${camelCase(name, { pascalCase: true })}`
           if (!checkPath(path)) shell.mkdir(path)
           break
 
-        case 'router':
-          path = `./src/modules/${camelCase(name, { pascalCase: true })}`
-          if (!checkPath(path)) shell.mkdir(path)
-          break
-
-        default: 
+        default:
           pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
           path = `${pathModule}/${folder}`
           if (!checkPath(pathModule)) shell.mkdir(pathModule)
@@ -157,14 +156,14 @@ const createModule = {
     }
   },
 
-  typings: () => {
-    const folder = `${createFolder('module', 'typings')}/`
-    const file = `${camelCase(name)}Typings.ts`
+  locales: () => {
+    const folder = `${createFolder('module', 'locales')}/`
+    const file = 'example.en.yaml'
     const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
-      shell.exec(`cat ${templates.modules.typings} > ${path}`)
+      shell.exec(`cat ${templates.modules.locales} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -228,6 +227,21 @@ const createModule = {
     }
   },
 
+  typings: () => {
+    const folder = `${createFolder('module', 'typings')}/`
+    const file = `${camelCase(name)}Typings.ts`
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.typings} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
   views: () => {
     const folder = `${createFolder('module', 'views')}/`
     const file = `${camelCase(name)}Index.vue`
@@ -243,14 +257,14 @@ const createModule = {
     }
   },
 
-  store: () => {
-    const folder = `${createFolder('module', 'store')}/`
-    const file = 'store.ts'
+  locale: () => {
+    const folder = `${createFolder('module', 'locale')}/`
+    const file = 'locale.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
-      shell.exec(`cat ${templates.modules.store} > ${path}`)
+      shell.exec(`cat ${templates.modules.locale} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -266,6 +280,21 @@ const createModule = {
     if (!checkPath(path)) {
       shell.touch(path)
       shell.exec(`cat ${templates.modules.router} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
+  store: () => {
+    const folder = `${createFolder('module', 'store')}/`
+    const file = 'store.ts'
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.store} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -301,12 +330,14 @@ const actions = {
     if (moduleType === 'all') {
       createModule.components()
       createModule.constants()
-      createModule.typings()
+      createModule.locales()
       createModule.services()
       createModule.stores()
+      createModule.typings()
       createModule.views()
-      createModule.store()
+      createModule.locale()
       createModule.router()
+      createModule.store()
     } else {
       createModule[moduleType]()
     }
