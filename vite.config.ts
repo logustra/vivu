@@ -5,13 +5,15 @@ import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteImport from 'vite-plugin-importer'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   build: {
     manifest: true,
     polyfillDynamicImport: true
   },
-  
+
   plugins: [
     Vue(),
 
@@ -35,7 +37,7 @@ export default defineConfig({
          * auto import element-plus
          */
         ElementPlusResolver()
-      ],
+      ]
     }),
 
     ViteIcons(),
@@ -47,7 +49,7 @@ export default defineConfig({
     ViteFonts({
       google: {
         families: ['Source Sans Pro']
-      },
+      }
     }),
 
     /**
@@ -57,6 +59,24 @@ export default defineConfig({
     ViteImport({
       libraryName: 'element-plus',
       style: true
+    }),
+
+    /**
+     * DESC:
+     * localization
+     */
+    VueI18n({
+      include: [resolve(__dirname, 'locales/**')]
+    }),
+
+    /**
+     * DESC:
+     * visualize bundle
+     */
+    ViteVisualizer({
+      filename: './dist/report.html',
+      open: true,
+      brotliSize: true
     })
   ],
 
@@ -70,7 +90,7 @@ export default defineConfig({
       'vuex',
       'vue-router',
       '@vueuse/integrations'
-    ],
+    ]
   },
 
   resolve: {
@@ -98,7 +118,7 @@ export default defineConfig({
       {
         find: 'templates',
         replacement: resolve(__dirname, './src/components/templates')
-      },
+      }
     ]
   }
 })

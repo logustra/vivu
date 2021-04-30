@@ -50,6 +50,7 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 - Git custom hooks: [husky](https://github.com/typicode/husky)
 - Commit conventions: [commitizen](https://github.com/commitizen/cz-cli)
 - Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [stylelint](https://github.com/stylelint/stylelint)
+- Visualize bundle: [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 - Optimized nginx config (ON PROGRESS)
 - Dockerize (ON PROGRESS)
 
