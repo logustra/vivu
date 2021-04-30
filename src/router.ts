@@ -1,6 +1,6 @@
 import {
   createRouter,
-  createWebHashHistory
+  createWebHistory
 } from 'vue-router'
 
 import { routerGuard } from '@/utils'
@@ -13,7 +13,7 @@ for (const path in domainRouterFiles) {
 }
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: '/:pathMatch(.*)',
