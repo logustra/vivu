@@ -3,6 +3,9 @@ import { API_EXAMPLE } from '../../constants'
 import { exampleService } from '../../services'
 
 const actions: {[key: string]: Function} = {
+  /**
+   * @param  {{commit:Function}} {commit}
+   */
   [types.EXAMPLE_REQUEST]: async ({ commit }: { commit: Function }) => {
     commit(types.EXAMPLE_REQUEST)
 

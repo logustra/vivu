@@ -6,7 +6,7 @@ export default class ExampleService {
   /**
    * @param  {Http} http
    */
-  public constructor(http: Http) {
+  public constructor (http: Http) {
     this.http = http
   }
 
@@ -14,8 +14,9 @@ export default class ExampleService {
    * @param  {string} url
    * @param  {{}} params?
    * @param  {{}} config?
+   * @returns Promise
    */
-  public async get(url: string, params?: {}, config?: {}) {
+  public async get (url: string, params?: {}, config?: {}): Promise<any> {
     try {
       return await this.http.get(url, params, config)
     } catch (error) {
