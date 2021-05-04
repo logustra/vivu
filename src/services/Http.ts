@@ -14,6 +14,7 @@ export default class Http {
    * @param  {string} url
    * @param  {{}} params?
    * @param  {{}} config?
+   * @returns any
    */
   public get (url: string, params?: {}, config?: {}): any {
     try {
@@ -31,13 +32,16 @@ export default class Http {
   /**
    * @param  {string} url
    * @param  {{}} data
+   * @param  {{}} config?
+   * @returns any
    */
-  public post (url: string, data: {}): any {
+  public post (url: string, data: {}, config?: {}): any {
     try {
       return this.axios.request({
         method: 'post',
         url,
-        data
+        data,
+        ...config
       })
     } catch (error) {
       throw error
@@ -47,13 +51,16 @@ export default class Http {
   /**
    * @param  {string} url
    * @param  {{}} data
+   * @param  {{}} config?
+   * @returns any
    */
-  public put (url: string, data: {}): any {
+  public put (url: string, data: {}, config?: {}): any {
     try {
       return this.axios.request({
         method: 'put',
         url,
-        data
+        data,
+        ...config
       })
     } catch (error) {
       throw error
@@ -63,13 +70,16 @@ export default class Http {
   /**
    * @param  {string} url
    * @param  {{}} data
+   * @param  {{}} config?
+   * @returns any
    */
-  public patch (url: string, data: {}): any {
+  public patch (url: string, data: {}, config?: {}): any {
     try {
       return this.axios.request({
         method: 'patch',
         url,
-        data
+        data,
+        ...config
       })
     } catch (error) {
       throw error
@@ -78,12 +88,15 @@ export default class Http {
 
   /**
    * @param  {string} url
+   * @param  {{}} config?
+   * @returns any
    */
-  public delete (url: string): any {
+  public delete (url: string, config?: {}): any {
     try {
       return this.axios.request({
         method: 'delete',
-        url
+        url,
+        ...config
       })
     } catch (error) {
       throw error
