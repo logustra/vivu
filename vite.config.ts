@@ -10,13 +10,12 @@ import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
-  const isLocal = mode === 'localhost'
   const isDev = mode === 'development'
   const isProd = mode === 'production'
   const isReport = mode === 'report'
 
   let build = {}
-  if (isDev || isProd) {
+  if (isProd) {
     build = {
       manifest: true,
       polyfillDynamicImport: true
@@ -101,7 +100,7 @@ export default defineConfig(({ mode }) => {
   }
 
   let optimizeDeps = {}
-  if (isLocal) {
+  if (isDev) {
     /**
      * DESC:
      * dependency pre-bundling
