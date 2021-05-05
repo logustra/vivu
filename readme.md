@@ -57,18 +57,12 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 
 ## Requirement
   - [node.js](http://nodejs.org/)
-  - [nvm](https://github.com/nvm-sh/nvm)
+  - [volta](https://docs.volta.sh/guide/getting-started)
   - [pnpm](https://pnpm.js.org/en/installation)
 
 ## Getting Started
 
 ```bash
-# install nodejs with specific version
-$ nvm install 14.16.1
-
-# using specific nodejs
-$ nvm use 14.16.1
-
 # clone repository
 $ git clone https://github.com/logustra/vivu.git
 
