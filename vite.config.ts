@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import ViteLegacy from '@vitejs/plugin-legacy'
 import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
@@ -13,14 +14,6 @@ export default defineConfig(({ mode }) => {
   const isDev = mode === 'development'
   const isProd = mode === 'production'
   const isReport = mode === 'report'
-
-  let build = {}
-  if (isProd) {
-    build = {
-      manifest: true,
-      polyfillDynamicImport: true
-    }
-  }
 
   const plugins = [
     Vue(),
@@ -84,6 +77,27 @@ export default defineConfig(({ mode }) => {
      */
     ViteYaml()
   ]
+
+  let build = {}
+  if (isProd) {
+    build = {
+      manifest: true
+    }
+
+    plugins.push(
+      /**
+       * DESC:
+       * provides support for legacy browsers 
+       * that do not support native ESM
+       */
+      ViteLegacy({
+        targets: [
+          'defaults', 
+          'not IE 11'
+        ]
+      })
+    )
+  }
 
   if (isReport) {
     plugins.push(

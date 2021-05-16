@@ -47,6 +47,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
+    "@vitejs/plugin-legacy": "^1.3.4",
     "chalk": "^4.1.1",
     "commander": "^7.2.0",
     "commitizen": "^4.2.4",
