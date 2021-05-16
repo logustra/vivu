@@ -38,6 +38,7 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 - Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
 - Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://github.com/vuejs/vuex), [vue-router](https://github.com/vuejs/vue-router-next)
 - Typescript, of course
+- Support legacy browsers: [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Auto injecting fonts: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
 - Just in time css utilities: [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
