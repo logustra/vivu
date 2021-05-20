@@ -1,4 +1,7 @@
-import axios, { AxiosInstance } from 'axios'
+import axios, {
+  AxiosInstance,
+  AxiosResponse
+} from 'axios'
 
 export default class Http {
   protected axios: AxiosInstance
@@ -14,9 +17,9 @@ export default class Http {
    * @param  {string} url
    * @param  {{}} params?
    * @param  {{}} config?
-   * @returns any
+   * @returns Promise
    */
-  public get (url: string, params?: {}, config?: {}): any {
+  public get (url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return this.axios.request({
         method: 'get',
@@ -33,9 +36,9 @@ export default class Http {
    * @param  {string} url
    * @param  {{}} data
    * @param  {{}} config?
-   * @returns any
+   * @returns Promise
    */
-  public post (url: string, data: {}, config?: {}): any {
+  public post (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return this.axios.request({
         method: 'post',
@@ -52,9 +55,9 @@ export default class Http {
    * @param  {string} url
    * @param  {{}} data
    * @param  {{}} config?
-   * @returns any
+   * @returns Promise
    */
-  public put (url: string, data: {}, config?: {}): any {
+  public put (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return this.axios.request({
         method: 'put',
@@ -71,9 +74,9 @@ export default class Http {
    * @param  {string} url
    * @param  {{}} data
    * @param  {{}} config?
-   * @returns any
+   * @returns Promise
    */
-  public patch (url: string, data: {}, config?: {}): any {
+  public patch (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return this.axios.request({
         method: 'patch',
@@ -89,9 +92,9 @@ export default class Http {
   /**
    * @param  {string} url
    * @param  {{}} config?
-   * @returns any
+   * @returns Promise
    */
-  public delete (url: string, config?: {}): any {
+  public delete (url: string, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return this.axios.request({
         method: 'delete',

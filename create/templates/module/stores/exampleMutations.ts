@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios'
 import * as types from './exampleTypes'
 import {
   ExampleState,
@@ -24,9 +25,9 @@ const mutations: {[key: string]: Function} = {
 
   /**
    * @param  {ExampleState} state
-   * @param  {boolean} response
+   * @param  {AxiosError} response
    */
-  [types.EXAMPLE_ERROR]: (state: ExampleState, response: boolean) => {
+  [types.EXAMPLE_ERROR]: (state: ExampleState, response: AxiosError) => {
     state.isFetching = false
     state.isError = response
   }

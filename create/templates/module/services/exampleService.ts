@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios'
 import Http from '@/services/Http'
 
 export default class ExampleService {
@@ -16,7 +17,7 @@ export default class ExampleService {
    * @param  {{}} config?
    * @returns Promise
    */
-  public async get (url: string, params?: {}, config?: {}): Promise<any> {
+  public async get (url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
     try {
       return await this.http.get(url, params, config)
     } catch (error) {
