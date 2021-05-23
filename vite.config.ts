@@ -5,7 +5,7 @@ import ViteLegacy from '@vitejs/plugin-legacy'
 import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteFonts from 'vite-plugin-fonts'
-import ViteImport from 'vite-plugin-importer'
+import ViteImport from 'vite-plugin-style-import'
 import ViteI18n from '@intlify/vite-plugin-vue-i18n'
 import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
@@ -58,8 +58,18 @@ export default defineConfig(({ mode }) => {
      * on-demand element-plus
      */
     ViteImport({
-      libraryName: 'element-plus',
-      style: true
+      libs: [{
+        libraryName: 'element-plus',
+        esModule: true,
+        ensureStyleFile: true,
+        resolveStyle: (name) => {
+          name = name.slice(3)
+          return `element-plus/packages/theme-chalk/src/${name}.scss`
+        },
+        resolveComponent: (name) => {
+          return `element-plus/lib/${name}`
+        }
+      }]
     }),
 
     /**
@@ -123,8 +133,7 @@ export default defineConfig(({ mode }) => {
       include: [
         'vue',
         'vuex',
-        'vue-router',
-        '@vueuse/integrations'
+        'vue-router'
       ]
     }
   }
