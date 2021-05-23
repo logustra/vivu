@@ -14,6 +14,8 @@ specifiers:
   '@vue/compiler-sfc': ^3.0.11
   '@vuedx/typecheck': ^0.6.3
   '@vuedx/typescript-plugin-vue': ^0.6.3
+  '@vuelidate/core': ^2.0.0-alpha.18
+  '@vuelidate/validators': ^2.0.0-alpha.15
   '@vueuse/integrations': ^4.11.0
   autoprefixer: ^10.2.5
   axios: ^0.21.1
@@ -63,6 +65,8 @@ dependencies:
   '@vue/compiler-sfc': 3.0.11_vue@3.0.11
   '@vuedx/typecheck': 0.6.3
   '@vuedx/typescript-plugin-vue': 0.6.3
+  '@vuelidate/core': 2.0.0-alpha.18_vue@3.0.11
+  '@vuelidate/validators': 2.0.0-alpha.15_vue@3.0.11
   '@vueuse/integrations': 4.11.0_vue@3.0.11
   autoprefixer: 10.2.5_postcss@8.2.15
   axios: 0.21.1
@@ -1164,6 +1168,22 @@ packages:
       vscode-uri: 2.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@vuelidate/core/2.0.0-alpha.18_vue@3.0.11:
+    resolution: {integrity: sha512-g6Pn0efTwSUbZWyCX0v4cLOiZoszrTCFC2CI8gI5szmgVZV30hmC3aI7yCutHwaPpPd2cxMB+XILS6cl7QHiYA==}
+    dependencies:
+      vue-demi: 0.6.2_vue@3.0.11
+    transitivePeerDependencies:
+      - vue
+    dev: false
+
+  /@vuelidate/validators/2.0.0-alpha.15_vue@3.0.11:
+    resolution: {integrity: sha512-G1gFPPA6ogLaQd2MRwg0gGCo1T5m52bQomTMvGeELWXc6WoDs416KSCZnh7hLktfm4BQBlKFKwM8PiiVJJDNuQ==}
+    dependencies:
+      vue-demi: 0.6.2_vue@3.0.11
+    transitivePeerDependencies:
+      - vue
     dev: false
 
   /@vueuse/integrations/4.11.0_vue@3.0.11:
@@ -5427,6 +5447,16 @@ packages:
 
   /vscode-web-custom-data/0.3.3:
     resolution: {integrity: sha512-orMjjj1r4efP5ocODYZm3orpANakRBsxPZPDoD5UIrFOPKDFtMJQLp6PIH1rb3AYVRD1iYXMhDQoC6tZ+DrigA==}
+    dev: false
+
+  /vue-demi/0.6.2_vue@3.0.11:
+    resolution: {integrity: sha512-4KfwxbqsZcDz7UryD11oHa6FLK9Gzx4MIwAEcP37IbUdXuF6DHg2w9L5Zv5t+FNqsuAjEQ2NnGVIZ3u71y435Q==}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      vue: ^2.6.0 || >=3.0.0-rc.1
+    dependencies:
+      vue: 3.0.11
     dev: false
 
   /vue-demi/0.9.0_vue@3.0.11:
