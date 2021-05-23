@@ -9,11 +9,11 @@
     </ElButton>
 
     <ElForm>
-      {{ v$.name.$error }}
-      <VFormItem :error="v$.name.$invalid">
+      <VFormItem :error="v$.name.$error">
         <ElInput
           v-model="form.name"
           placeholder="Name"
+          @input="v$.name.$touch"
         />
 
         <template #error>
