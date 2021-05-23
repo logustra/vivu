@@ -36,14 +36,14 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 
 ## Features
 - Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
-- Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://github.com/vuejs/vuex), [vue-router](https://github.com/vuejs/vue-router-next)
+- Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://next.vuex.vuejs.org), [vue-router](https://github.com/vuejs/vue-router-next)
 - Typescript, of course
 - Support legacy browsers: [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Auto injecting fonts: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
 - Just in time css utilities: [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
 - On-demand components auto importing: [iconify](https://github.com/antfu/vite-plugin-icons), [element-plus](https://github.com/element-plus/element-plus)
-- Schema-driven form generation: [formvuelate](https://github.com/formvuelate/formvuelate) (ON PROGRESS)
+- Form validation: [vuelidate](https://vuelidate-next.netlify.app)
 - Localization: [vue-i18n](https://github.com/intlify/vue-i18n-next), [vite-plugins-i18n](https://github.com/intlify/vite-plugin-vue-i18n)
 - Documented components: [storybook](https://github.com/storybookjs/storybook) (ON PROGRESS)
 - Unit test: [jest](https://github.com/facebook/jest) (ON PROGRESS)
