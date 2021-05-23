@@ -1,11 +1,12 @@
+import { Router } from 'vue-router'
 import { useNProgress } from '@vueuse/integrations'
 
 const { start, done } = useNProgress(null, {
   showSpinner: false
 })
 
-const routerGuard: Function = (router: any) => {
-  router.beforeEach((to: any, from: any, next: any) => {
+const routerGuard: Function = (router: Router) => {
+  router.beforeEach((to, from, next) => {
     /**
      * DESC:
      * start progress bar

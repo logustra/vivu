@@ -1,12 +1,13 @@
 import {
   createRouter,
-  createWebHistory
+  createWebHistory,
+  RouteRecordRaw
 } from 'vue-router'
 
 import { routerGuard } from '@/utils'
 
 const domainRouterFiles = import.meta.globEager('../src/modules/**/router.ts')
-const domainRoutes: any = []
+const domainRoutes: RouteRecordRaw[] = []
 
 for (const path in domainRouterFiles) {
   domainRoutes.push(...domainRouterFiles[path].default)
