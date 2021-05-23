@@ -1,14 +1,13 @@
 #nprogress {
-  @apply pointer-events-none;
+  pointer-events: none;
 
   .bar {
-    @apply
-      bg-green-400
-      fixed
-      z-50
-      top-0
-      left-0
-      w-full
-      h-0.5;
+    width: theme('width.full');
+    height: theme('height.1');
+    background-color: theme('colors.green.400');
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: theme('zIndex.50');
   }
 }
