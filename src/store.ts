@@ -11,7 +11,7 @@ for (const path in domainStoreFiles) {
 }
 
 const store = createStore({
-  strict: import.meta.env.VITE_APP_ENV !== 'production',
+  strict: import.meta.env.DEV,
   modules: {
     ...globalStores,
     ...domainStores

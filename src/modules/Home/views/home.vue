@@ -64,7 +64,6 @@ export default defineComponent({
     onMounted(() => {
       setTitle('home')
       console.log(common.title)
-      console.log(import.meta.env.VITE_APP_ENV)
     })
 
     const form = reactive({
