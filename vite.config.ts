@@ -62,11 +62,11 @@ export default defineConfig(({ mode }) => {
         libraryName: 'element-plus',
         esModule: true,
         ensureStyleFile: true,
-        resolveStyle: (name) => {
+        resolveStyle: (name: string) => {
           name = name.slice(3)
           return `element-plus/packages/theme-chalk/src/${name}.scss`
         },
-        resolveComponent: (name) => {
+        resolveComponent: (name: string) => {
           return `element-plus/lib/${name}`
         }
       }]
@@ -142,6 +142,20 @@ export default defineConfig(({ mode }) => {
     build,
     plugins,
     optimizeDeps,
+
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @import "@/styles/vendors/element.scss";
+            @import "@/styles/vendors/tailwind.scss";
+            @import "@/styles/vendors/nprogress.scss";
+            @import "@/styles/index.scss";
+          `
+        }
+      }
+    },
+
     resolve: {
       alias: [
         {
