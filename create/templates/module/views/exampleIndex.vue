@@ -27,5 +27,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  // your style
+  /**
+   * DESC:
+   * your style
+   */
 </style>

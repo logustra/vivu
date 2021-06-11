@@ -31,6 +31,9 @@ export default defineComponent({
 
 <style lang="scss">
 .v-example {
-  // your style
+  /**
+   * DESC:
+   * your style
+   */
 }
 </style>
