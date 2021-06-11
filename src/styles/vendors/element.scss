@@ -1,7 +1,11 @@
 /**
  * DESC:
- * tailwind colors
+ * tailwind colors.<color>.400
  */
-$--color-primary: #3b82f6;
+$--color-primary: #60a5fa;
+$--color-success: #34d399;
+$--color-warning: #fbbf24;
+$--color-danger: #f87171;
+$--color-info: #9ca3af;
 
 @use 'element-plus/packages/theme-chalk/src/common/transition.scss';

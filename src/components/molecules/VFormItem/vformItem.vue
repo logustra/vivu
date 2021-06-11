@@ -38,13 +38,8 @@ export default defineComponent({
     /* stylelint-disable-next-line */
     .el-input__inner,
     .el-textarea__inner {
-      border: 1px solid theme('colors.red.500');
+      border: 1px solid theme('colors.red.400');
     }
-  }
-
-  /* stylelint-disable-next-line */
-  &__error {
-    color: theme('colors.red.500');
   }
 }
 </style>
