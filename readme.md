@@ -55,6 +55,12 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 - Optimized nginx config (ON PROGRESS)
 - Dockerize (ON PROGRESS)
 
+## Dev Tools
+- [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar): Vue 3 IDE support
+- [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify): Icon inline display and autocomplete
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally): All in one i18n support
+- [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss): IDE support for Tailwind CSS
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Requirement
   - [node.js](http://nodejs.org/)
@@ -72,9 +78,6 @@ $ cd vivu
 
 # install packages
 $ pnpm install
-
-# install git hooks
-$ pnpm prepare
 
 # build and serve with vite dev server
 $ pnpm dev
