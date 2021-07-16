@@ -53,7 +53,7 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 - Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [stylelint](https://github.com/stylelint/stylelint)
 - Visualize bundle: [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 - Optimized nginx config
-- Dockerize (ON PROGRESS)
+- Dockerize
 
 ## Dev Tools
 - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar): Vue 3 IDE support
@@ -81,6 +81,16 @@ $ pnpm install
 
 # build and serve with vite dev server
 $ pnpm dev
+```
+
+## Run with Docker
+
+```bash
+# build docker image and tag it with name nginx
+$ docker build . -t nginx
+
+# run docker image nginx with name vivu in port 9900
+$ docker run -it -p 9900:80 --rm --name vivu nginx
 ```
 
 ## How to Create Folder

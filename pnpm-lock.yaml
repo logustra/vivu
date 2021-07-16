@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-node: ^11.1.0
   eslint-plugin-promise: ^4.3.1
   eslint-plugin-vue: ^7.9.0
-  husky: ^6.0.0
+  husky: ^7.0.0
   postcss: ^8.2.15
   postcss-import: ^14.0.2
   rimraf: ^3.0.2
@@ -71,6 +71,7 @@ dependencies:
   camelcase: 6.2.0
   dotenv-cli: 4.0.0
   element-plus: 1.0.2-beta.44_vue@3.0.11
+  husky: 7.0.0
   postcss: 8.2.15
   postcss-import: 14.0.2_postcss@8.2.15
   rimraf: 3.0.2
@@ -103,7 +104,6 @@ devDependencies:
   eslint-plugin-node: 11.1.0_eslint@7.26.0
   eslint-plugin-promise: 4.3.1
   eslint-plugin-vue: 7.9.0_eslint@7.26.0
-  husky: 6.0.0
   shelljs: 0.8.4
   standard: 16.0.3
   stylelint: 13.13.1
@@ -3072,10 +3072,11 @@ packages:
       - supports-color
     dev: false
 
-  /husky/6.0.0:
-    resolution: {integrity: sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==}
+  /husky/7.0.0:
+    resolution: {integrity: sha512-xK7lO0EtSzfFPiw+oQncQVy/XqV7UVVjxBByc+Iv5iK3yhW9boDoWgvZy3OGo48QKg/hUtZkzz0hi2HXa0kn7w==}
+    engines: {node: '>=12'}
     hasBin: true
-    dev: true
+    dev: false
 
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
