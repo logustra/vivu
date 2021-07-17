@@ -68,6 +68,12 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
   - [pnpm](https://pnpm.js.org/en/installation)
 
 ## Getting Started
+### GitHub Template
+
+[Create a repo from this template on GitHub](https://github.com/logustra/vivu/generate).
+
+### Clone to local
+If you prefer to do it manually with the cleaner git history
 
 ```bash
 # clone repository
@@ -83,7 +89,7 @@ $ pnpm install
 $ pnpm dev
 ```
 
-## Run with Docker
+### Run with Docker
 
 ```bash
 # build docker image and tag it with name nginx
@@ -92,6 +98,18 @@ $ docker build . -t nginx
 # run docker image nginx with name vivu in port 9900
 $ docker run -it -p 9900:80 --rm --name vivu nginx
 ```
+
+## Checklist
+When you use this template, try follow the checklist to update your info properly
+
+- [ ] Change `name, description, repository, bugs` field in `package.json`
+- [ ] Change the author name in `LICENSE`
+- [ ] Change the title in `App.vue`
+- [ ] Change the favicon in `public`
+- [ ] Remove the `.github` folder which contains the funding info
+- [ ] Clean up the README(s) and remove modules
+
+And, enjoy :)
 
 ## How to Create Folder
 A guide how to create a folder using `create-cli`
