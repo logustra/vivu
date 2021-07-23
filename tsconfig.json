@@ -21,7 +21,10 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
+    "types": [
+      "vite/client",
+      "@types/jest"
+    ],
     "typeRoots": [
       "node_modules/@types",
       "typings"
@@ -47,7 +50,8 @@
   "include": [
     "src/**/*.ts", 
     "src/**/*.d.ts", 
-    "src/**/*.vue"
+    "src/**/*.vue",
+    ".jest/*.ts"
   ],
 
   "exclude": [

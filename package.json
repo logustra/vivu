@@ -25,6 +25,7 @@
   "scripts": {
     "prepare": "husky install",
     "clean:dist": "rimraf dist",
+    "clean:coverage": "rimraf coverage",
     "dev": "cp env/env.dev .env && vite --mode development",
     "build:dev": "pnpm clean:dist && cp env/env.dev .env && vite build --mode production",
     "build:prod": "pnpm clean:dist && cp env/env.prod .env && vite build --mode production",
@@ -35,7 +36,9 @@
     "linter": "eslint -c .eslintrc.js --ext .js,.vue,.ts, src",
     "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts, src",
     "lint": "pnpm linter && pnpm stylelint",
-    "lint:fix": "pnpm linter:fix && pnpm stylelint:fix"
+    "lint:fix": "pnpm linter:fix && pnpm stylelint:fix",
+    "test": "pnpm clean:coverage && jest",
+    "test:watch": "pnpm clean:coverage && jest --watch"
   },
   "config": {
     "commitizen": {
@@ -45,6 +48,9 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/vue": "^6.4.2",
+    "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "@vitejs/plugin-legacy": "^1.3.4",
@@ -57,13 +63,19 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-vue": "^7.9.0",
+    "jest": "26.6.3",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
+    "jest-watch-typeahead": "^0.6.4",
     "shelljs": "^0.8.4",
     "standard": "^16.0.3",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-rscss": "^0.4.0",
-    "stylelint-scss": "^3.19.0"
+    "stylelint-scss": "^3.19.0",
+    "ts-jest": "26.5.6",
+    "vue-jest": "^5.0.0-alpha.10"
   },
   "dependencies": {
     "@iconify/json": "^1.1.343",
