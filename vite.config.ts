@@ -139,17 +139,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-    build: {
-      rollupOptions: {
-        output: {
-          entryFileNames: 'assets/[name].js',
-          chunkFileNames: 'assets/[name].js',
-          assetFileNames: 'assets/[name].[ext]'
-        }
-      },
-      ...build
-    },
-
+    build,
     plugins,
     optimizeDeps,
 
