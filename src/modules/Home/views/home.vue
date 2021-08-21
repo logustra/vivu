@@ -26,9 +26,8 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
   reactive,
   computed,
   onMounted
@@ -42,46 +41,33 @@ import { SET_TITLE } from '@/stores/Common/commonTypes'
 
 import { VFormItem } from 'molecules'
 
-export default defineComponent({
-  name: 'Home',
-  components: { VFormItem },
-  setup () {
-    const {
-      t,
-      availableLocales,
-      locale
-    } = useI18n()
+const {
+  t,
+  availableLocales,
+  locale
+} = useI18n()
 
-    const store = useStore()
-    const common = store.getters.common
-    const setTitle = (title) => store.dispatch(SET_TITLE, title)
+const store = useStore()
+const common = store.getters.common
+const setTitle = (title) => store.dispatch(SET_TITLE, title)
 
-    function toggleLocales () {
-      const locales = availableLocales
-      locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-    }
+function toggleLocales () {
+  const locales = availableLocales
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
 
-    onMounted(() => {
-      setTitle('home')
-      console.log(common.title)
-    })
-
-    const form = reactive({
-      name: ''
-    })
-
-    const formRules = computed(() => ({
-      name: { required }
-    }))
-
-    const v$ = useVuelidate(formRules, form)
-
-    return {
-      t,
-      toggleLocales,
-      v$,
-      form
-    }
-  }
+onMounted(() => {
+  setTitle('home')
+  console.log(common.title)
 })
+
+const form = reactive({
+  name: ''
+})
+
+const formRules = computed(() => ({
+  name: { required }
+}))
+
+const v$ = useVuelidate(formRules, form)
 </script>

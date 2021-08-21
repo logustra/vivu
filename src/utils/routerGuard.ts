@@ -23,6 +23,10 @@ const routerGuard: Function = (router: Router) => {
     done()
   })
 
+  router.onError(() => {
+    location.reload()
+  })
+
   return router
 }
 
