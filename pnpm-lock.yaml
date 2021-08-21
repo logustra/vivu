@@ -9,6 +9,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.14.1
   '@testing-library/vue': ^6.5.0
   '@types/jest': ^26.0.24
+  '@types/js-cookie': ^2.2.7
   '@typescript-eslint/eslint-plugin': ^4.29.2
   '@typescript-eslint/parser': ^4.29.2
   '@vitejs/plugin-legacy': ^1.5.1
@@ -38,6 +39,7 @@ specifiers:
   jest-serializer-vue: ^2.0.2
   jest-transform-stub: ^2.0.0
   jest-watch-typeahead: ^0.6.4
+  js-cookie: ^3.0.0
   postcss: ^8.3.6
   postcss-import: ^14.0.2
   rimraf: ^3.0.2
@@ -68,6 +70,7 @@ dependencies:
   '@iconify/json': 1.1.391
   '@intlify/vite-plugin-vue-i18n': 2.4.0_4cef02acf2f8b9c8009dbbdef0b0dc6c
   '@rollup/plugin-yaml': 3.1.0
+  '@types/js-cookie': 2.2.7
   '@vitejs/plugin-legacy': 1.5.1_vite@2.5.0
   '@vitejs/plugin-vue': 1.4.0_@vue+compiler-sfc@3.2.4
   '@vue/compiler-sfc': 3.2.4
@@ -82,6 +85,7 @@ dependencies:
   dotenv-cli: 4.0.0
   element-plus: 1.0.2-beta.44_vue@3.2.4
   husky: 7.0.1
+  js-cookie: 3.0.0
   postcss: 8.3.6
   postcss-import: 14.0.2_postcss@8.3.6
   rimraf: 3.0.2
@@ -1386,6 +1390,10 @@ packages:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
     dev: true
+
+  /@types/js-cookie/2.2.7:
+    resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
+    dev: false
 
   /@types/json-schema/7.0.9:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
@@ -5375,6 +5383,11 @@ packages:
       glob: 7.1.7
       nopt: 5.0.0
     dev: true
+
+  /js-cookie/3.0.0:
+    resolution: {integrity: sha512-oUbbplKuH07/XX2YD2+Q+GMiPpnVXaRz8npE7suhBH9QEkJe2W7mQ6rwuMXHue3fpfcftQwzgyvGzIHyfCSngQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
