@@ -38,6 +38,7 @@ Learn the design patterns [here](https://github.com/logustra/7ad)
 - Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
 - Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://next.vuex.vuejs.org), [vue-router](https://github.com/vuejs/vue-router-next)
 - Typescript, of course
+- Using new `<script setup>` style
 - Support legacy browsers: [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Fonts auto injecting: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
@@ -104,7 +105,7 @@ When you use this template, try follow the checklist to update your info properl
 
 - [ ] Change `name, description, repository, bugs` field in `package.json`
 - [ ] Change the author name in `LICENSE`
-- [ ] Change the title in `App.vue`
+- [ ] Change the title in `commonState.ts`
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the README(s) and remove modules
