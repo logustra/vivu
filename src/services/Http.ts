@@ -14,12 +14,25 @@ export default class Http {
   }
 
   /**
+  * @returns any
+  */
+  public interceptors (): any {
+    this.axios.interceptors.response.use(response => {
+      return response
+    }, error => {
+      throw error
+    })
+  }
+
+  /**
    * @param  {string} url
    * @param  {{}} params?
    * @param  {{}} config?
    * @returns Promise
    */
   public get (url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
+    this.interceptors()
+
     try {
       return this.axios.request({
         method: 'get',
@@ -39,6 +52,8 @@ export default class Http {
    * @returns Promise
    */
   public post (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+    this.interceptors()
+
     try {
       return this.axios.request({
         method: 'post',
@@ -58,6 +73,8 @@ export default class Http {
    * @returns Promise
    */
   public put (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+    this.interceptors()
+
     try {
       return this.axios.request({
         method: 'put',
@@ -77,6 +94,8 @@ export default class Http {
    * @returns Promise
    */
   public patch (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+    this.interceptors()
+
     try {
       return this.axios.request({
         method: 'patch',
@@ -95,6 +114,8 @@ export default class Http {
    * @returns Promise
    */
   public delete (url: string, config?: {}): Promise<AxiosResponse<any>> {
+    this.interceptors()
+
     try {
       return this.axios.request({
         method: 'delete',

@@ -16,18 +16,15 @@
   </ElFormItem>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineProps } from 'vue'
 
-export default defineComponent({
-  name: 'VFormItem',
-
-  props: {
-    error: {
-      type: Boolean,
-      required: true,
-      default: false
-    }
+/* eslint-disable-next-line */
+const props = defineProps({
+  error: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 })
 </script>

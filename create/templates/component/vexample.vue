@@ -1,31 +1,25 @@
 <template>
   <div class="v-example">
-    <slot /> 
+    <slot />
   </div>
 </template>
 
-<script lang="ts">
-import { 
-  defineComponent,
+<script lang="ts" setup>
+import {
+  defineProps,
   onMounted
 } from 'vue'
 
-export default defineComponent({
-  name: 'VExample',
-
-  props: {
-    example: {
-      type: String,
-      required: true,
-      default: ''
-    }
-  },
-
-  setup (props) {
-    onMounted (() => {
-      console.log(props.example)
-    })
+const props = defineProps({
+  example: {
+    type: String,
+    required: true,
+    default: ''
   }
+})
+
+onMounted(() => {
+  console.log(props.example)
 })
 </script>
 

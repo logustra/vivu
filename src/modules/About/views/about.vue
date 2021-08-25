@@ -1,5 +1,5 @@
 <template>
-  <div>
-    about
+  <div class="text-center">
+    page about
   </div>
 </template>
