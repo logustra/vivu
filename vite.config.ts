@@ -2,8 +2,10 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import ViteLegacy from '@vitejs/plugin-legacy'
-import ViteComponents, { ElementPlusResolver } from 'vite-plugin-components'
-import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
+import ViteComponents from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import ViteIcons from 'unplugin-icons/vite'
+import ViteIconsResolver from 'unplugin-icons/resolver'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteImport from 'vite-plugin-style-import'
 import ViteI18n from '@intlify/vite-plugin-vue-i18n'
@@ -23,7 +25,7 @@ export default defineConfig(({ mode }) => {
      * auto import components
      */
     ViteComponents({
-      customComponentResolvers: [
+      resolvers: [
         /**
          * DESC:
          * auto import iconify
