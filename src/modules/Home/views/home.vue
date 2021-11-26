@@ -33,11 +33,10 @@ import {
   onMounted
 } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStore } from 'vuex'
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
-import { SET_TITLE } from '@/stores/Common/commonTypes'
+import { useCommon } from '@/composable'
 
 import { VFormItem } from 'molecules'
 
@@ -47,9 +46,10 @@ const {
   locale
 } = useI18n()
 
-const store = useStore()
-const common = store.getters.common
-const setTitle = (title) => store.dispatch(SET_TITLE, title)
+const {
+  common,
+  setTitle
+} = useCommon()
 
 function toggleLocales () {
   const locales = availableLocales
