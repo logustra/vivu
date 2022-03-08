@@ -131,7 +131,7 @@ $ node create module home all
 If you like my works, you can cheer me on here 😆
 
 &nbsp; &nbsp; 🇮🇩 [Trakteer](https://trakteer.id/logustra/tip)<br>
-&nbsp; &nbsp; 🌍 [Ko-Fi]()<br>
+&nbsp; &nbsp; 🌍 [Ko-Fi](https://ko-fi.com/logustra)<br>
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_large)
