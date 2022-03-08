@@ -127,24 +127,11 @@ $ node create component atoms loading
 $ node create module home all
 ```
 
-## How to Contribute
-I'm delighted that you're helping make this open source project better. Here are a few quick guidelines to make this an easier and better process for everyone.
+## Cheer me on
+If you like my works, you can cheer me on here 😆
 
-### Reporting a bug
-First, **make sure the bug hasn't already been reported** by searching GitHub's issues section.
-
-If no existing issue exists, go ahead and create one. **Please be sure to include all of the following**:
-
-1. A clear, descriptive title (ie. "A bug" is not a good title).
-2. Include the error message if have.
-3. The browser and OS that you're using.
-
-### Submitting a Pull Request
-1. Fork it
-2. Create your feature branch `git checkout -b new-feature`
-3. Commit your changes `git commit -m "Add some feature"`
-4. Push to the branch `git push origin new-feature`
-5. Create new Pull Request
+&nbsp; &nbsp; 🇮🇩 [Trakteer](https://trakteer.id/logustra/tip)<br>
+&nbsp; &nbsp; 🌍 [Ko-Fi]()<br>
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_large)
