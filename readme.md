@@ -1,10 +1,17 @@
 <div align="center">
   <h2>Vivu</h2>
 
-  <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_shield">
+  <a href="https://github.com/logustra/vivu/releases/tag/v1.0.0">
     <img 
-      src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=shield&color=brightgreen" 
-      alt="FOSSA Status"
+      src="https://img.shields.io/static/v1.svg?label=version&message=1.0.0&style=flat&color=brightgreen" 
+      alt="Version"
+    >
+  </a>
+
+  <a href="https://github.com/logustra/vivu/blob/master/license.md">
+    <img 
+      src="https://img.shields.io/github/license/logustra/vivu"
+      alt="License" 
     >
   </a>
 
@@ -12,13 +19,6 @@
     <img 
       src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat" 
       alt="Code Style"
-    >
-  </a>
-
-  <a href="https://github.com/logustra/vivu/releases/tag/v1.0.0">
-    <img 
-      src="https://img.shields.io/static/v1.svg?label=version&message=1.0.0&style=flat&color=brightgreen" 
-      alt="Version"
     >
   </a>
 
@@ -31,8 +31,8 @@
 </div>
 <br />
 
-## Learn 7AD
-Learn the design patterns [here](https://github.com/logustra/7ad)
+## Design Pattern
+Learn the design pattern [here](https://github.com/logustra/dave)
 
 ## Features
 - Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
@@ -134,4 +134,4 @@ If you like my works, you can cheer me on here 😆
 &nbsp; &nbsp; 🌍 [Ko-Fi](https://ko-fi.com/logustra)<br>
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flogustra%2Fvivu.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flogustra%2Fvivu?ref=badge_large)
+MIT License © 2021 Faizal Andyka
