@@ -1,36 +1,10 @@
-<div align="center">
-  <h2>Vivu</h2>
+## Vivu
 
-  <a href="https://github.com/logustra/vivu/releases/tag/v1.0.0">
-    <img 
-      src="https://img.shields.io/static/v1.svg?label=version&message=1.0.0&style=flat&color=brightgreen" 
-      alt="Version"
-    >
-  </a>
+[![Licence](https://img.shields.io/github/license/logustra/vivu)](https://github.com/logustra/vivu/blob/master/license.md)
+[![Code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
 
-  <a href="https://github.com/logustra/vivu/blob/master/license.md">
-    <img 
-      src="https://img.shields.io/github/license/logustra/vivu"
-      alt="License" 
-    >
-  </a>
-
-  <a href="https://standardjs.com">
-    <img 
-      src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat" 
-      alt="Code Style"
-    >
-  </a>
-
-  <a href="http://commitizen.github.io/cz-cli">
-    <img 
-      src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat" 
-      alt="Commitizen"
-    >
-  </a>
-</div>
-<br />
-
+> Opinionated scalable vue boilerplate using vite
 ## Design Pattern
 Learn the design pattern [here](https://github.com/logustra/dave)
 
@@ -53,6 +27,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - Commit conventions: [commitizen](https://github.com/commitizen/cz-cli)
 - Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 - Visualize bundle: [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
+- CI/CD: [github actions](https://github.com/features/actions)
 - Optimized nginx config
 - Dockerize
 
