@@ -13,8 +13,9 @@ import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
-  const isDev = mode === 'development'
-  const isProd = mode === 'production'
+  const isProd = mode === 'prod'
+  const isDev = mode === 'dev'
+  const isTest = mode === 'test'
   const isReport = mode === 'report'
 
   const plugins = [
@@ -111,20 +112,6 @@ export default defineConfig(({ mode }) => {
     )
   }
 
-  if (isReport) {
-    plugins.push(
-      /**
-       * DESC:
-       * visualize bundle
-       */
-      ViteVisualizer({
-        filename: './dist/report.html',
-        open: true,
-        brotliSize: true
-      })
-    )
-  }
-
   let optimizeDeps = {}
   if (isDev) {
     /**
@@ -140,10 +127,47 @@ export default defineConfig(({ mode }) => {
     }
   }
 
+  let test = {}
+  if (isTest) {
+    /**
+     * DESC:
+     * vitest config
+     */
+    test = {
+      include: [
+        'src/components/**/**/*.test.ts',
+        'src/modules/**/tests/*.test.ts'
+      ],
+      environment: 'happy-dom',
+      coverage: {
+        reporter: [
+          'text',
+          'text-summary',
+          'lcov',
+        ],
+      },
+    }
+  }
+
+  if (isReport) {
+    plugins.push(
+      /**
+       * DESC:
+       * visualize bundle
+       */
+      ViteVisualizer({
+        filename: './dist/report.html',
+        open: true,
+        brotliSize: true
+      })
+    )
+  }
+
   return {
-    build,
     plugins,
     optimizeDeps,
+    build,
+    test,
 
     css: {
       preprocessorOptions: {
@@ -158,6 +182,10 @@ export default defineConfig(({ mode }) => {
       }
     },
 
+    /**
+     * DESC:
+     * defining aliases
+     */
     resolve: {
       alias: [
         {

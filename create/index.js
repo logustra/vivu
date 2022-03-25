@@ -28,7 +28,8 @@ let name = 'example'
 
 const templates = {
   components: {
-    default: './create/templates/component/vexample.vue',
+    view: './create/templates/component/vexample.vue',
+    test: './create/templates/component/vexample.test.ts',
   },
 
   modules: {
@@ -50,6 +51,7 @@ const templates = {
       './create/templates/module/stores/index.ts'
     ],
 
+    tests: './create/templates/module/tests/exampleIndex.test.ts',
     typings: './create/templates/module/typings/exampleTypings.ts',
     views: './create/templates/module/views/exampleIndex.vue',
     locale: './create/templates/module/locale.ts',
@@ -109,14 +111,28 @@ const createFolder = (type, folder) => {
 }
 
 const createComponent = {
-  default: folderName => {
+  view: folderName => {
     const folder = `${createFolder('component', folderName)}/`
     const file = `v${camelCase(name)}.vue`
     const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
-      shell.exec(`cat ${templates.components.default} > ${path}`)
+      shell.exec(`cat ${templates.components.view} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+  test: folderName => {
+    const folder = `${createFolder('component', folderName)}/`
+    const file = `v${camelCase(name)}.test.ts`
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.components.test} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -227,6 +243,21 @@ const createModule = {
     }
   },
 
+  tests: () => {
+    const folder = `${createFolder('module', 'tests')}/`
+    const file = `${camelCase(name)}.test.ts`
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.tests} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
   typings: () => {
     const folder = `${createFolder('module', 'typings')}/`
     const file = `${camelCase(name)}Typings.ts`
@@ -306,22 +337,26 @@ const createModule = {
 const actions = {
   atoms: componentName => {
     name = componentName
-    createComponent.default('atoms')
+    createComponent.view('atoms')
+    createComponent.test('atoms')
   },
 
   molecules: componentName => {
     name = componentName
-    createComponent.default('molecules')
+    createComponent.view('molecules')
+    createComponent.test('molecules')
   },
 
   organisms: componentName => {
     name = componentName
-    createComponent.default('organisms')
+    createComponent.view('organisms')
+    createComponent.test('organisms')
   },
 
   templates: componentName => {
     name = componentName
-    createComponent.default('templates')
+    createComponent.view('templates')
+    createComponent.test('templates')
   },
 
   module: (moduleName, moduleType) => {
@@ -333,6 +368,7 @@ const actions = {
       createModule.locales()
       createModule.services()
       createModule.stores()
+      createModule.tests()
       createModule.typings()
       createModule.views()
       createModule.locale()

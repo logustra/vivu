@@ -20,11 +20,11 @@
     "removeComments": true,
     "noImplicitAny": false,
     "baseUrl": ".",
-    "lib": ["esnext", "dom"],
-    "types": [
-      "vite/client",
-      "@types/jest"
+    "lib": [
+      "esnext", 
+      "dom"
     ],
+    "types": ["vite/client"],
     "typeRoots": [
       "node_modules/@types",
       "typings"
@@ -51,7 +51,6 @@
     "src/**/*.ts", 
     "src/**/*.d.ts", 
     "src/**/*.vue",
-    ".jest/*.ts"
   ],
 
   "exclude": [
