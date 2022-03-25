@@ -7,8 +7,8 @@ const routes: {}[] = [
         resolve(import('./views/home.vue'))
         reject(new Error('Failed to load page'))
       })
-    }
-  }
+    },
+  },
 ]
 
 export default routes

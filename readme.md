@@ -51,7 +51,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - HTTP request: [axios](https://github.com/axios/axios)
 - Git custom hooks: [husky](https://github.com/typicode/husky)
 - Commit conventions: [commitizen](https://github.com/commitizen/cz-cli)
-- Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [stylelint](https://github.com/stylelint/stylelint)
+- Linters: [commitlint](https://github.com/conventional-changelog/commitlint), [eslint](https://github.com/eslint/eslint), [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 - Visualize bundle: [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 - Optimized nginx config
 - Dockerize

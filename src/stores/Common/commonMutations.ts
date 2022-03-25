@@ -1,7 +1,7 @@
 import * as types from './commonTypes'
-import { CommonState } from '@/typings/commonTypings'
+import type { CommonState } from '@/typings/commonTypings'
 
-const mutations: {[key: string]: Function} = {
+const mutations: Record<string, Function> = {
   /**
    * @param  {CommonState} state
    * @param  {string} response
@@ -9,7 +9,7 @@ const mutations: {[key: string]: Function} = {
   [types.SET_TITLE]: (state: CommonState, response: string) => {
     document.title = response
     state.title = response
-  }
+  },
 }
 
 export default mutations

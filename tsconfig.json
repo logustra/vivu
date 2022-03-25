@@ -21,7 +21,7 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "lib": [
-      "esnext", 
+      "esnext",
       "dom"
     ],
     "types": ["vite/client"],
@@ -41,15 +41,15 @@
     },
 
     "plugins": [
-      { 
-        "name": "@vuedx/typescript-plugin-vue" 
+      {
+        "name": "@vuedx/typescript-plugin-vue"
       }
     ]
   },
-  
+
   "include": [
-    "src/**/*.ts", 
-    "src/**/*.d.ts", 
+    "src/**/*.ts",
+    "src/**/*.d.ts",
     "src/**/*.vue",
   ],
 

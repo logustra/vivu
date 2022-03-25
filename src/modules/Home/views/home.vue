@@ -28,45 +28,40 @@
 
 <script lang="ts" setup>
 import {
-  reactive,
   computed,
-  onMounted
+  onMounted,
+  reactive,
 } from 'vue'
 import { useI18n } from 'vue-i18n'
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
-import { useCommon } from '@/composable'
-
 import { VFormItem } from 'molecules'
+import { useCommon } from '@/composable'
 
 const {
   t,
   availableLocales,
-  locale
+  locale,
 } = useI18n()
 
-const {
-  common,
-  setTitle
-} = useCommon()
+const { setTitle } = useCommon()
 
-function toggleLocales () {
+function toggleLocales() {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
 
 onMounted(() => {
   setTitle('home')
-  console.log(common.title)
 })
 
 const form = reactive({
-  name: ''
+  name: '',
 })
 
 const formRules = computed(() => ({
-  name: { required }
+  name: { required },
 }))
 
 const v$ = useVuelidate(formRules, form)

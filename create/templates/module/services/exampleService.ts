@@ -1,5 +1,5 @@
-import { AxiosResponse } from 'axios'
-import Http from '@/services/Http'
+import type { AxiosResponse } from 'axios'
+import type Http from '@/services/Http'
 
 export default class ExampleService {
   protected http: Http
@@ -7,7 +7,7 @@ export default class ExampleService {
   /**
    * @param  {Http} http
    */
-  public constructor (http: Http) {
+  public constructor(http: Http) {
     this.http = http
   }
 
@@ -17,10 +17,12 @@ export default class ExampleService {
    * @param  {{}} config?
    * @returns Promise
    */
-  public async get (url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
+  public async get(url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
+    // eslint-disable-next-line no-useless-catch
     try {
       return await this.http.get(url, params, config)
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }

@@ -33,15 +33,15 @@ export default defineConfig(({ mode }) => {
          */
         ViteIconsResolver({
           componentPrefix: '',
-          enabledCollections: ['cil']
+          enabledCollections: ['cil'],
         }),
 
         /**
          * DESC:
          * auto import element-plus
          */
-        ElementPlusResolver()
-      ]
+        ElementPlusResolver(),
+      ],
     }),
 
     ViteIcons(),
@@ -52,8 +52,8 @@ export default defineConfig(({ mode }) => {
      */
     ViteFonts({
       google: {
-        families: ['Source Sans Pro']
-      }
+        families: ['Source Sans Pro'],
+      },
     }),
 
     /**
@@ -71,8 +71,8 @@ export default defineConfig(({ mode }) => {
         },
         resolveComponent: (name: string) => {
           return `element-plus/lib/${name}`
-        }
-      }]
+        },
+      }],
     }),
 
     /**
@@ -81,34 +81,34 @@ export default defineConfig(({ mode }) => {
      */
     ViteI18n({
       include: [resolve(__dirname, 'locales/**')],
-      runtimeOnly: false
+      runtimeOnly: false,
     }),
 
     /**
      * DESC:
      * converts YAML files to ES6 modules
      */
-    ViteYaml()
+    ViteYaml(),
   ]
 
   let build = {}
   if (isProd) {
     build = {
-      manifest: true
+      manifest: true,
     }
 
     plugins.push(
       /**
        * DESC:
-       * provides support for legacy browsers 
+       * provides support for legacy browsers
        * that do not support native ESM
        */
       ViteLegacy({
         targets: [
-          'defaults', 
-          'not IE 11'
-        ]
-      })
+          'defaults',
+          'not IE 11',
+        ],
+      }),
     )
   }
 
@@ -122,8 +122,8 @@ export default defineConfig(({ mode }) => {
       include: [
         'vue',
         'vuex',
-        'vue-router'
-      ]
+        'vue-router',
+      ],
     }
   }
 
@@ -136,7 +136,7 @@ export default defineConfig(({ mode }) => {
     test = {
       include: [
         'src/components/**/**/*.test.ts',
-        'src/modules/**/tests/*.test.ts'
+        'src/modules/**/tests/*.test.ts',
       ],
       environment: 'happy-dom',
       coverage: {
@@ -158,8 +158,8 @@ export default defineConfig(({ mode }) => {
       ViteVisualizer({
         filename: './dist/report.html',
         open: true,
-        brotliSize: true
-      })
+        brotliSize: true,
+      }),
     )
   }
 
@@ -177,9 +177,9 @@ export default defineConfig(({ mode }) => {
             @import "@/styles/vendors/tailwind.scss";
             @import "@/styles/vendors/nprogress.scss";
             @import "@/styles/index.scss";
-          `
-        }
-      }
+          `,
+        },
+      },
     },
 
     /**
@@ -190,29 +190,29 @@ export default defineConfig(({ mode }) => {
       alias: [
         {
           find: '@',
-          replacement: resolve(__dirname, './src')
+          replacement: resolve(__dirname, './src'),
         },
         {
           find: '@@',
-          replacement: resolve(__dirname, './src/modules')
+          replacement: resolve(__dirname, './src/modules'),
         },
         {
           find: 'atoms',
-          replacement: resolve(__dirname, './src/components/atoms')
+          replacement: resolve(__dirname, './src/components/atoms'),
         },
         {
           find: 'molecules',
-          replacement: resolve(__dirname, './src/components/molecules')
+          replacement: resolve(__dirname, './src/components/molecules'),
         },
         {
           find: 'organisms',
-          replacement: resolve(__dirname, './src/components/organisms')
+          replacement: resolve(__dirname, './src/components/organisms'),
         },
         {
           find: 'templates',
-          replacement: resolve(__dirname, './src/components/templates')
-        }
-      ]
-    }
+          replacement: resolve(__dirname, './src/components/templates'),
+        },
+      ],
+    },
   }
 })

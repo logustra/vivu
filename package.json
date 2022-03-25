@@ -2,7 +2,6 @@
   "name": "vivu",
   "version": "1.0.0",
   "description": "A highly scalable vue boilerplate using vite",
-  "main": "index.js",
   "keywords": [
     "vue",
     "typescript",
@@ -15,13 +14,14 @@
     "vue-boilerplate",
     "vite"
   ],
+  "license": "MIT",
+  "author": "Faizal Andyka",
   "repository": {
     "type": "git",
     "url": "https://github.com/logustra/vivu"
   },
+  "main": "index.js",
   "bugs": "https://github.com/logustra/vivu/issues",
-  "author": "Faizal Andyka",
-  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "clean:dist": "rimraf dist",
@@ -31,41 +31,14 @@
     "build:prod": "pnpm clean:dist && cp env/env.prod .env && vite build --mode prod",
     "build:report": "pnpm clean:dist && cp env/env.prod .env && vite build --mode report",
     "serve": "vite preview",
-    "stylelint": "stylelint --config stylelint.config.js 'src/**/*.{vue,scss}'",
-    "stylelint:fix": "stylelint --config stylelint.config.js --fix 'src/**/*.{vue,scss}'",
-    "linter": "eslint -c .eslintrc.js --ext .js,.vue,.ts, src",
-    "linter:fix": "eslint -c .eslintrc.js --fix --ext .js,.vue,.ts, src",
-    "lint": "pnpm linter && pnpm stylelint",
-    "lint:fix": "pnpm linter:fix && pnpm stylelint:fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "pnpm clean:coverage && vitest --coverage --mode test"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@testing-library/vue": "^6.5.0",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "@typescript-eslint/parser": "^4.29.2",
-    "chalk": "^4.1.2",
-    "commander": "^7.2.0",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.24.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-vue": "^7.16.0",
-    "shelljs": "^0.8.4",
-    "standard": "^16.0.3",
-    "stylelint": "^13.13.1",
-    "stylelint-config-recommended-scss": "^4.3.0",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-rscss": "^0.4.0",
-    "stylelint-scss": "^3.20.1"
   },
   "dependencies": {
     "@iconify/json": "^1.1.434",
@@ -103,6 +76,17 @@
     "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.18.9",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@testing-library/vue": "^6.5.0",
+    "chalk": "^4.1.2",
+    "commander": "^7.2.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.11.0"
   },
   "volta": {
     "node": "14.17.1"

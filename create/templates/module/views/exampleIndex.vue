@@ -14,6 +14,7 @@ const exampleRequest = () => store.dispatch(EXAMPLE_REQUEST)
 
 onMounted (() => {
   exampleRequest()
+  // eslint-disable-next-line no-console
   console.log(example)
 })
 </script>

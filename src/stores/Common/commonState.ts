@@ -1,5 +1,5 @@
 const state: Function = () => ({
-  title: 'Vivu'
+  title: 'Vivu',
 })
 
 export default state

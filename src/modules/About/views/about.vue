@@ -9,13 +9,9 @@ import { onMounted } from 'vue'
 
 import { useCommon } from '@/composable'
 
-const {
-  common,
-  setTitle
-} = useCommon()
+const { setTitle } = useCommon()
 
 onMounted(() => {
   setTitle('about')
-  console.log(common.title)
 })
 </script>

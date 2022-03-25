@@ -7,18 +7,19 @@
 <script lang="ts" setup>
 import {
   defineProps,
-  onMounted
+  onMounted,
 } from 'vue'
 
 const props = defineProps({
   example: {
     type: String,
     required: true,
-    default: ''
-  }
+    default: '',
+  },
 })
 
 onMounted(() => {
+  // eslint-disable-next-line no-console
   console.log(props.example)
 })
 </script>

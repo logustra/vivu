@@ -1,7 +1,7 @@
 const state: Function = () => ({
   data: [],
   isFetching: false,
-  isError: false
+  isError: false,
 })
 
 export default state

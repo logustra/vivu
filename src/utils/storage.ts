@@ -6,11 +6,10 @@ const storageErrorPage = String(import.meta.env.VITE_STORAGE_ERROR_PAGE)
 
 export const setErrorPage = (
   name: string,
-  expires = expired
+  expires = expired,
 ): void => {
-  if (!isUndefined(name)) {
+  if (!isUndefined(name))
     cookie.set(storageErrorPage, name, { expires })
-  }
 }
 
 export const getErrorPage = (): string => {

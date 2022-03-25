@@ -1,10 +1,10 @@
-import { ExampleState } from '../../typings/exampleTypings'
+import type { ExampleState } from '../../typings/exampleTypings'
 
-const getters: {[key: string]: Function} = {
+const getters: Record<string, Function> = {
   /**
    * @param  {ExampleState} state
    */
-  example: (state: ExampleState) => state
+  example: (state: ExampleState) => state,
 }
 
 export default getters

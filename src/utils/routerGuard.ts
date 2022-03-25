@@ -1,13 +1,13 @@
-import { Router } from 'vue-router'
+import type { Router } from 'vue-router'
 import { useNProgress } from '@vueuse/integrations'
 import {
-  setErrorPage,
+  delErrorPage,
   getErrorPage,
-  delErrorPage
+  setErrorPage,
 } from './storage'
 
 const { start, done } = useNProgress(null, {
-  showSpinner: false
+  showSpinner: false,
 })
 
 const routerGuard: Function = (router: Router) => {

@@ -1,7 +1,9 @@
+import type {
+  RouteRecordRaw,
+} from 'vue-router'
 import {
   createRouter,
   createWebHistory,
-  RouteRecordRaw
 } from 'vue-router'
 
 import { routerGuard } from '@/utils'
@@ -9,9 +11,8 @@ import { routerGuard } from '@/utils'
 const domainRouterFiles = import.meta.globEager('../src/modules/**/router.ts')
 const domainRoutes: RouteRecordRaw[] = []
 
-for (const path in domainRouterFiles) {
+for (const path in domainRouterFiles)
   domainRoutes.push(...domainRouterFiles[path].default)
-}
 
 const router = createRouter({
   history: createWebHistory(),
@@ -19,11 +20,11 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)',
       name: 'notFound',
-      component: () => import('./views/notFound.vue')
+      component: () => import('./views/notFound.vue'),
     },
 
-    ...domainRoutes
-  ]
+    ...domainRoutes,
+  ],
 })
 
 export default routerGuard(router)

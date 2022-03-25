@@ -19,13 +19,12 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 
-/* eslint-disable-next-line */
 const props = defineProps({
   error: {
     type: Boolean,
     required: true,
-    default: false
-  }
+    default: false,
+  },
 })
 </script>
 

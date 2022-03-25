@@ -1,7 +1,8 @@
-import axios, {
+import type {
   AxiosInstance,
-  AxiosResponse
+  AxiosResponse,
 } from 'axios'
+import axios from 'axios'
 
 export default class Http {
   protected axios: AxiosInstance
@@ -9,17 +10,17 @@ export default class Http {
   /**
    * @param  {{}} axiosConfig
    */
-  public constructor (axiosConfig: {}) {
+  public constructor(axiosConfig: {}) {
     this.axios = axios.create(axiosConfig)
   }
 
   /**
   * @returns any
   */
-  public interceptors (): any {
-    this.axios.interceptors.response.use(response => {
+  public interceptors(): any {
+    this.axios.interceptors.response.use((response) => {
       return response
-    }, error => {
+    }, (error) => {
       throw error
     })
   }
@@ -30,17 +31,19 @@ export default class Http {
    * @param  {{}} config?
    * @returns Promise
    */
-  public get (url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
+  public get(url: string, params?: {}, config?: {}): Promise<AxiosResponse<any>> {
     this.interceptors()
 
+    // eslint-disable-next-line no-useless-catch
     try {
       return this.axios.request({
         method: 'get',
         url,
         params,
-        ...config
+        ...config,
       })
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }
@@ -51,17 +54,19 @@ export default class Http {
    * @param  {{}} config?
    * @returns Promise
    */
-  public post (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+  public post(url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     this.interceptors()
 
+    // eslint-disable-next-line no-useless-catch
     try {
       return this.axios.request({
         method: 'post',
         url,
         data,
-        ...config
+        ...config,
       })
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }
@@ -72,17 +77,19 @@ export default class Http {
    * @param  {{}} config?
    * @returns Promise
    */
-  public put (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+  public put(url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     this.interceptors()
 
+    // eslint-disable-next-line no-useless-catch
     try {
       return this.axios.request({
         method: 'put',
         url,
         data,
-        ...config
+        ...config,
       })
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }
@@ -93,17 +100,19 @@ export default class Http {
    * @param  {{}} config?
    * @returns Promise
    */
-  public patch (url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
+  public patch(url: string, data: {}, config?: {}): Promise<AxiosResponse<any>> {
     this.interceptors()
 
+    // eslint-disable-next-line no-useless-catch
     try {
       return this.axios.request({
         method: 'patch',
         url,
         data,
-        ...config
+        ...config,
       })
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }
@@ -113,16 +122,18 @@ export default class Http {
    * @param  {{}} config?
    * @returns Promise
    */
-  public delete (url: string, config?: {}): Promise<AxiosResponse<any>> {
+  public delete(url: string, config?: {}): Promise<AxiosResponse<any>> {
     this.interceptors()
 
+    // eslint-disable-next-line no-useless-catch
     try {
       return this.axios.request({
         method: 'delete',
         url,
-        ...config
+        ...config,
       })
-    } catch (error) {
+    }
+    catch (error) {
       throw error
     }
   }

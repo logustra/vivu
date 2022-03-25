@@ -1,11 +1,11 @@
-import { AxiosError } from 'axios'
-import * as types from './exampleTypes'
-import {
+import type { AxiosError } from 'axios'
+import type {
+  ExampleDataModel,
   ExampleState,
-  ExampleDataModel
 } from '../../typings/exampleTypings'
+import * as types from './exampleTypes'
 
-const mutations: {[key: string]: Function} = {
+const mutations: Record<string, Function> = {
   /**
    * @param  {ExampleState} state
    */
@@ -30,7 +30,7 @@ const mutations: {[key: string]: Function} = {
   [types.EXAMPLE_ERROR]: (state: ExampleState, response: AxiosError) => {
     state.isFetching = false
     state.isError = response
-  }
+  },
 }
 
 export default mutations
