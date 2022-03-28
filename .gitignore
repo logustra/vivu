@@ -1,3 +1,5 @@
+.vitebook/.cache
+.vitebook/.temp
 coverage
 dist
 node_modules

@@ -60,5 +60,9 @@
     "postcss.config.js",
     "stylelint.config.js",
     "tailwind.config.js"
+  ],
+
+  "references": [
+    { "path": "./tsconfig.node.json" }
   ]
 }

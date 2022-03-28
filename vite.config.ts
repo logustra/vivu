@@ -19,8 +19,6 @@ export default defineConfig(({ mode }) => {
   const isReport = mode === 'report'
 
   const plugins = [
-    Vue(),
-
     /**
      * DESC:
      * auto import components
@@ -90,6 +88,13 @@ export default defineConfig(({ mode }) => {
      */
     ViteYaml(),
   ]
+
+  if (
+    isProd
+    || isDev
+    || isTest
+    || isReport
+  ) plugins.push(Vue())
 
   let build = {}
   if (isProd) {
