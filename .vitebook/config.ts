@@ -12,8 +12,8 @@ export default defineConfig<DefaultThemeConfig>({
   include: [
     'src/components/**/**/*.md', 
     'src/components/**/**/*.story.vue', 
-    'src/modules/**/**/**/*.md',
-    'src/modules/**/**/**/*.story.vue',
+    'src/modules/**/components/**/*.md',
+    'src/modules/**/components/**/*.story.vue',
     'src/styles/**/*.md',
   ],
   /**

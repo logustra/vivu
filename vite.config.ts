@@ -141,6 +141,7 @@ export default defineConfig(({ mode }) => {
     test = {
       include: [
         'src/components/**/**/*.test.ts',
+        'src/modules/**/components/**/*.test.ts',
         'src/modules/**/tests/*.test.ts',
       ],
       environment: 'happy-dom',
