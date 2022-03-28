@@ -80,7 +80,7 @@ When you use this template, try follow the checklist to update your info properl
 
 - [ ] Change `name, description, repository, bugs` field in `package.json`
 - [ ] Change the author name in `LICENSE`
-- [ ] Change the title in `commonState.ts`
+- [ ] Change the site in `.vitebook/config.ts`
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the README(s) and remove modules
