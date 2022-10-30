@@ -30,9 +30,9 @@ const props = defineProps({
 .v-form-item {
   &.-error {
     /* stylelint-disable-next-line */
-    .el-input__inner,
-    .el-textarea__inner {
-      border: 1px solid theme('colors.red.400');
+    .el-input__wrapper,
+    .el-textarea__wrapper {
+      box-shadow: 0 0 0 1px theme('colors.red.400') inset;
     }
   }
 }

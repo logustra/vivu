@@ -7,7 +7,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ViteIcons from 'unplugin-icons/vite'
 import ViteIconsResolver from 'unplugin-icons/resolver'
 import ViteFonts from 'vite-plugin-fonts'
-import ViteImport from 'vite-plugin-style-import'
 import ViteI18n from '@intlify/vite-plugin-vue-i18n'
 import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
@@ -24,6 +23,8 @@ export default defineConfig(({ mode }) => {
      * auto import components
      */
     ViteComponents({
+      extensions: ['vue'],
+      include: [/\.vue$/, /\.vue\?vue/],
       resolvers: [
         /**
          * DESC:
@@ -38,8 +39,11 @@ export default defineConfig(({ mode }) => {
          * DESC:
          * auto import element-plus
          */
-        ElementPlusResolver(),
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
       ],
+      dts: 'src/typings/components.d.ts',
     }),
 
     ViteIcons(),
@@ -52,25 +56,6 @@ export default defineConfig(({ mode }) => {
       google: {
         families: ['Source Sans Pro'],
       },
-    }),
-
-    /**
-     * DESC:
-     * on-demand element-plus
-     */
-    ViteImport({
-      libs: [{
-        libraryName: 'element-plus',
-        esModule: true,
-        ensureStyleFile: true,
-        resolveStyle: (name: string) => {
-          name = name.slice(3)
-          return `element-plus/packages/theme-chalk/src/${name}.scss`
-        },
-        resolveComponent: (name: string) => {
-          return `element-plus/lib/${name}`
-        },
-      }],
     }),
 
     /**
@@ -179,10 +164,10 @@ export default defineConfig(({ mode }) => {
       preprocessorOptions: {
         scss: {
           additionalData: `
-            @import "@/styles/vendors/element.scss";
-            @import "@/styles/vendors/tailwind.scss";
-            @import "@/styles/vendors/nprogress.scss";
-            @import "@/styles/index.scss";
+            @use '@/styles/vendors/element.scss';
+            @use '@/styles/vendors/tailwind.scss';
+            @use '@/styles/vendors/nprogress.scss';
+            @use '@/styles/index.scss';
           `,
         },
       },

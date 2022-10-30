@@ -2,10 +2,24 @@
  * DESC:
  * tailwind colors.<color>.400
  */
-$--color-primary: #60a5fa;
-$--color-success: #34d399;
-$--color-warning: #fbbf24;
-$--color-danger: #f87171;
-$--color-info: #9ca3af;
+$--colors: (
+  'primary': (
+    'base': #60a5fa,
+  ),
+  'success': (
+    'base': #34d399,
+  ),
+  'warning': (
+    'base': #fbbf24,
+  ),
+  'danger': (
+    'base': #f87171,
+  ),
+  'info': (
+    'base': #9ca3af,
+  ),
+);
 
-@use 'element-plus/packages/theme-chalk/src/common/transition.scss';
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: $--colors,
+);
