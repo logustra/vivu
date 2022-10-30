@@ -5,10 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  defineProps,
-  onMounted,
-} from 'vue'
+import { onMounted } from 'vue'
 
 const props = defineProps({
   example: {
