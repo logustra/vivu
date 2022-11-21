@@ -11,6 +11,7 @@ declare global {
   const createApp: typeof import('vue')['createApp']
   const createLogger: typeof import('vuex')['createLogger']
   const createNamespacedHelpers: typeof import('vuex')['createNamespacedHelpers']
+  const createService: typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/createService')['default']
   const createStore: typeof import('vuex')['createStore']
   const customRef: typeof import('vue')['customRef']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
@@ -21,7 +22,6 @@ declare global {
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getErrorPage: typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/utils/storage')['getErrorPage']
   const h: typeof import('vue')['h']
-  const http: typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/Http')['default']
   const httpService: typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/index')['httpService']
   const inject: typeof import('vue')['inject']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -89,6 +89,7 @@ declare module 'vue' {
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createLogger: UnwrapRef<typeof import('vuex')['createLogger']>
     readonly createNamespacedHelpers: UnwrapRef<typeof import('vuex')['createNamespacedHelpers']>
+    readonly createService: UnwrapRef<typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/createService')['default']>
     readonly createStore: UnwrapRef<typeof import('vuex')['createStore']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
@@ -99,7 +100,6 @@ declare module 'vue' {
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getErrorPage: UnwrapRef<typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/utils/storage')['getErrorPage']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
-    readonly http: UnwrapRef<typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/Http')['default']>
     readonly httpService: UnwrapRef<typeof import('/Volumes/DIST/Documents/Open Source/vivu/src/services/index')['httpService']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>

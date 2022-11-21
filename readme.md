@@ -103,6 +103,9 @@ $ node create component atoms loading
 $ node create module home all
 ```
 
+## Variations
+- [vivu-npm](https://github.com/logustra/vivu-npm): Starter template to build component library
+
 ## Cheers me on
 Love my works? give me 🌟 or cheers me on here 😆 <br>
 Your support means a lot to me. It will help me sustain my projects actively and make more of my ideas come true. <br>
