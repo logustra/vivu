@@ -84,7 +84,6 @@
     "@antfu/eslint-config": "^0.31.0",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
-    "@testing-library/vue": "^6.6.1",
     "@types/node": "^18.11.9",
     "@vitebook/client": "^0.100.5",
     "@vitebook/core": "^0.100.5",
