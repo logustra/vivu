@@ -6,7 +6,7 @@ import {
   createWebHistory,
 } from 'vue-router'
 
-import { routerGuard } from '@/utils'
+import routerGuard from '@/utils/routerGuard'
 
 const domainRouterFiles = import.meta.globEager('../src/modules/**/router.ts')
 const domainRoutes: RouteRecordRaw[] = []

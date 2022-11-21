@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VLayout } from 'templates'
+import VLayout from 'templates/VLayout/vlayout.vue'
 </script>
 
 <template>

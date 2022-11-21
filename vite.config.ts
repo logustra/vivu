@@ -24,8 +24,16 @@ export default defineConfig(({ mode }) => {
      */
     ViteUnimport.vite({
       dirs: [
+        'src/components/**/**/*.{vue,ts}',
         'src/composables',
-        'src/stores',
+        'src/services',
+        'src/stores/**',
+        'src/utils',
+        'src/modules/components/**/**/*.{vue,ts}',
+        'src/modules/composables',
+        'src/modules/services',
+        'src/modules/stores/**',
+        'src/modules/utils',
       ],
       dts: 'src/typings/auto-imports.d.ts',
       addons: {

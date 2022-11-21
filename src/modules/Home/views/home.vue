@@ -8,8 +8,8 @@ import { useI18n } from 'vue-i18n'
 import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
-import { VFormItem } from 'molecules'
-import { useCommon } from '@/composables'
+import VFormItem from 'molecules/VFormItem/vformItem.vue'
+import useCommon from '@/composables/useCommon'
 
 const {
   t,
