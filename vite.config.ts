@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import ViteLegacy from '@vitejs/plugin-legacy'
+import ViteAutoImport from 'unplugin-auto-import/vite'
 import ViteComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ViteIcons from 'unplugin-icons/vite'
@@ -20,11 +20,28 @@ export default defineConfig(({ mode }) => {
   const plugins = [
     /**
      * DESC:
+     * auto import APIs
+     */
+    ViteAutoImport({
+      dirs: ['src/**/**/**/**'],
+      vueTemplate: true,
+      dts: 'src/typings/auto-imports.d.ts',
+      imports: [
+        'vue',
+        'vuex',
+        'vue-router',
+        'vue-i18n',
+      ],
+    }),
+
+    /**
+     * DESC:
      * auto import components
      */
     ViteComponents({
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
+      dts: 'src/typings/components.d.ts',
       resolvers: [
         /**
          * DESC:
@@ -43,7 +60,6 @@ export default defineConfig(({ mode }) => {
           importStyle: 'sass',
         }),
       ],
-      dts: 'src/typings/components.d.ts',
     }),
 
     ViteIcons(),
@@ -84,22 +100,9 @@ export default defineConfig(({ mode }) => {
   let build = {}
   if (isProd) {
     build = {
+      target: 'es2015',
       manifest: true,
     }
-
-    plugins.push(
-      /**
-       * DESC:
-       * provides support for legacy browsers
-       * that do not support native ESM
-       */
-      ViteLegacy({
-        targets: [
-          'defaults',
-          'not IE 11',
-        ],
-      }),
-    )
   }
 
   let optimizeDeps = {}
@@ -113,6 +116,7 @@ export default defineConfig(({ mode }) => {
         'vue',
         'vuex',
         'vue-router',
+        'vue-i18n',
       ],
     }
   }

@@ -1,5 +1,5 @@
 import type { Router } from 'vue-router'
-import { useNProgress } from '@vueuse/integrations'
+import { useNProgress } from '@vueuse/integrations/useNProgress'
 import {
   delErrorPage,
   getErrorPage,
@@ -16,7 +16,8 @@ const routerGuard: Function = (router: Router) => {
      * DESC:
      * start progress bar
      */
-    if (to.path) start()
+    if (to.path)
+      start()
     next()
   })
 
