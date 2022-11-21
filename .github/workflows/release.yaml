@@ -15,6 +15,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup volta
+        uses: volta-cli/action@v3
+
       - name: Generate a new github release
         run: npx conventional-github-releaser -p angular
         continue-on-error: true
