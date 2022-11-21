@@ -1,7 +1,3 @@
-<template>
-  <div>Bismillah, Hello World!</div>
-</template>
-
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { useStore } from 'vuex'
@@ -18,6 +14,10 @@ onMounted (() => {
   console.log(example)
 })
 </script>
+
+<template>
+  <div>Bismillah, Hello World!</div>
+</template>
 
 <style lang="scss" scoped>
   /**

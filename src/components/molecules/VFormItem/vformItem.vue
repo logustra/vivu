@@ -1,7 +1,17 @@
+<script lang="ts" setup>
+const props = defineProps({
+  error: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+})
+</script>
+
 <template>
   <ElFormItem
     class="v-form-item"
-    :class="{'-error': error}"
+    :class="{ '-error': error }"
   >
     <slot />
 
@@ -15,16 +25,6 @@
     </transition>
   </ElFormItem>
 </template>
-
-<script lang="ts" setup>
-const props = defineProps({
-  error: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-})
-</script>
 
 <style lang="scss">
 .v-form-item {

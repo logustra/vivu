@@ -37,7 +37,7 @@
       "atoms": ["src/components/atoms"],
       "molecules": ["src/components/molecules"],
       "organisms": ["src/components/organisms"],
-      "templates": ["src/components/templates"],
+      "templates": ["src/components/templates"]
     },
 
     "plugins": [
@@ -50,7 +50,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.vue",
+    "src/**/*.vue"
   ],
 
   "exclude": [

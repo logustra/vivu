@@ -6,7 +6,7 @@ const actions: Record<string, Function> = {
   /**
    * @param  {{commit:Function}} {commit}
    */
-  [types.EXAMPLE_REQUEST]: async({ commit }: { commit: Function }) => {
+  [types.EXAMPLE_REQUEST]: async ({ commit }: { commit: Function }) => {
     commit(types.EXAMPLE_REQUEST)
 
     try {

@@ -1,9 +1,3 @@
-<template>
-  <div class="v-example">
-    <slot />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 
@@ -20,6 +14,12 @@ onMounted(() => {
   console.log(props.example)
 })
 </script>
+
+<template>
+  <div class="v-example">
+    <slot />
+  </div>
+</template>
 
 <style lang="scss">
 .v-example {
