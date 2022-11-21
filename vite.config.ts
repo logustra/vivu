@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import ViteAutoImport from 'unplugin-auto-import/vite'
+import ViteUnimport from 'unimport/unplugin'
 import ViteComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ViteIcons from 'unplugin-icons/vite'
@@ -22,11 +22,16 @@ export default defineConfig(({ mode }) => {
      * DESC:
      * auto import APIs
      */
-    ViteAutoImport({
-      dirs: ['src/**/**/**/**'],
-      vueTemplate: true,
+    ViteUnimport.vite({
+      dirs: [
+        'src/composables',
+        'src/stores',
+      ],
       dts: 'src/typings/auto-imports.d.ts',
-      imports: [
+      addons: {
+        vueTemplate: true,
+      },
+      presets: [
         'vue',
         'vuex',
         'vue-router',

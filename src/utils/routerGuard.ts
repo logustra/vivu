@@ -1,4 +1,3 @@
-import type { Router } from 'vue-router'
 import { useNProgress } from '@vueuse/integrations/useNProgress'
 import {
   delErrorPage,
