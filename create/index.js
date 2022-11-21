@@ -1,10 +1,10 @@
 const chalk = require('chalk')
 const shell = require('shelljs')
 const { Command } = require('commander')
-const program = new Command()
 const camelCase = require('camelcase')
 const pkg = require('../package.json') 
 
+const program = new Command()
 const COMPONENT_TYPES = [
   'atoms',
   'molecules',
@@ -15,6 +15,7 @@ const COMPONENT_TYPES = [
 const MODULE_TYPES = [
   'all',
   'components',
+  'composable',
   'constants',
   'services',
   'stores',
@@ -34,6 +35,7 @@ const templates = {
 
   modules: {
     components: './create/templates/module/components/index.ts',
+    composable: './create/templates/module/composable/index.ts',
     constants: './create/templates/module/constants/index.ts',
     locales: './create/templates/module/locales/example.en.yaml',
 
@@ -150,6 +152,21 @@ const createModule = {
     if (!checkPath(path)) {
       shell.touch(path)
       shell.exec(`cat ${templates.modules.components} > ${path}`)
+
+      log(folder, file, true)
+    } else {
+      log(folder, file, false)
+    }
+  },
+
+  composable: () => {
+    const folder = `${createFolder('module', 'composable')}/`
+    const file = 'index.ts'
+    const path = folder + file
+
+    if (!checkPath(path)) {
+      shell.touch(path)
+      shell.exec(`cat ${templates.modules.composable} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -364,6 +381,7 @@ const actions = {
 
     if (moduleType === 'all') {
       createModule.components()
+      createModule.composable()
       createModule.constants()
       createModule.locales()
       createModule.services()
