@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 
-import { useCommon } from '@/composable'
+import { useCommon } from '@/composables'
 
 const { setTitle } = useCommon()
 

@@ -9,7 +9,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
 import { VFormItem } from 'molecules'
-import { useCommon } from '@/composable'
+import { useCommon } from '@/composables'
 
 const {
   t,

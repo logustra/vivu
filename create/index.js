@@ -15,7 +15,7 @@ const COMPONENT_TYPES = [
 const MODULE_TYPES = [
   'all',
   'components',
-  'composable',
+  'composables',
   'constants',
   'services',
   'stores',
@@ -35,7 +35,7 @@ const templates = {
 
   modules: {
     components: './create/templates/module/components/index.ts',
-    composable: './create/templates/module/composable/index.ts',
+    composables: './create/templates/module/composables/index.ts',
     constants: './create/templates/module/constants/index.ts',
     locales: './create/templates/module/locales/example.en.yaml',
 
@@ -159,14 +159,14 @@ const createModule = {
     }
   },
 
-  composable: () => {
-    const folder = `${createFolder('module', 'composable')}/`
+  composables: () => {
+    const folder = `${createFolder('module', 'composables')}/`
     const file = 'index.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
-      shell.exec(`cat ${templates.modules.composable} > ${path}`)
+      shell.exec(`cat ${templates.modules.composables} > ${path}`)
 
       log(folder, file, true)
     } else {
@@ -381,7 +381,7 @@ const actions = {
 
     if (moduleType === 'all') {
       createModule.components()
-      createModule.composable()
+      createModule.composables()
       createModule.constants()
       createModule.locales()
       createModule.services()
