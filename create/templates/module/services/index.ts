@@ -1,4 +1,6 @@
-import ExampleService from './exampleService'
-import { httpService } from '@/services'
+import createService from '@/services/createService'
 
-export const exampleService = new ExampleService(httpService)
+export const exampleService = createService(
+  String(import.meta.env.VITE_API_URL),
+  Number(import.meta.env.VITE_TIMEOUT),
+)

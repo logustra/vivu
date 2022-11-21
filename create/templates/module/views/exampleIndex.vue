@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { useStore } from 'vuex'
-
 import { EXAMPLE_REQUEST } from '@/stores/Example/exampleTypes'
 
 const store = useStore()

@@ -1,9 +1,7 @@
-import type { AxiosError } from 'axios'
-
 export interface ExampleState {
   data: ExampleDataModel[]
   isFetching: boolean
-  isError: AxiosError
+  isError: Error
 }
 
 export interface ExampleDataModel {

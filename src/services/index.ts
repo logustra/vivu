@@ -1,6 +1,6 @@
-import Http from './Http'
+import createService from './createService'
 
-export const httpService = new Http({
-  baseURL: import.meta.env.VITE_API_URL,
-  timeout: Number(import.meta.env.VITE_TIMEOUT),
-})
+export const httpService = createService(
+  String(import.meta.env.VITE_API_URL),
+  Number(import.meta.env.VITE_TIMEOUT),
+)

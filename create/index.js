@@ -38,11 +38,7 @@ const templates = {
     composables: './create/templates/module/composables/index.ts',
     constants: './create/templates/module/constants/index.ts',
     locales: './create/templates/module/locales/example.en.yaml',
-
-    services: [
-      './create/templates/module/services/exampleService.ts',
-      './create/templates/module/services/index.ts'
-    ],
+    services: './create/templates/module/services/index.ts',
 
     stores: [
       './create/templates/module/stores/exampleActions.ts',
@@ -206,27 +202,16 @@ const createModule = {
 
   services: () => {
     const folder = `${createFolder('module', 'services')}/`
-    const file = [
-      `${camelCase(name)}Service.ts`,
-      'index.ts'
-    ]
-
-    const path = file.reduce((carry, item) => {
-      return [...carry, folder + item]
-    }, [])
+    const file = 'index.ts'
+    const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
+      shell.exec(`cat ${templates.modules.services} > ${path}`)
 
-      for (const index in templates.modules.services) {
-        shell.exec(`cat ${templates.modules.services[index]} > ${path[index]}`)
-
-        log(folder, file[index], true)
-      }
+      log(folder, file, true)
     } else {
-      for (const index in templates.modules.services) {
-        log(folder, file[index], false)
-      }
+      log(folder, file, false)
     }
   },
 

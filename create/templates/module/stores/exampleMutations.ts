@@ -1,4 +1,3 @@
-import type { AxiosError } from 'axios'
 import type {
   ExampleDataModel,
   ExampleState,
@@ -25,9 +24,9 @@ const mutations: Record<string, Function> = {
 
   /**
    * @param  {ExampleState} state
-   * @param  {AxiosError} response
+   * @param  {Error} response
    */
-  [types.EXAMPLE_ERROR]: (state: ExampleState, response: AxiosError) => {
+  [types.EXAMPLE_ERROR]: (state: ExampleState, response: Error) => {
     state.isFetching = false
     state.isError = response
   },
