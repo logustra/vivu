@@ -33,7 +33,10 @@
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm clean:coverage && vitest --coverage --mode test"
+    "test": "pnpm clean:coverage && vitest --coverage --mode test",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "config": {
     "commitizen": {
@@ -81,6 +84,7 @@
     "@antfu/eslint-config": "^0.31.0",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@histoire/plugin-vue": "^0.11.7",
     "@types/node": "^18.11.9",
     "@vitest/coverage-c8": "^0.25.2",
     "chalk": "^4.1.2",
@@ -89,8 +93,8 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.27.0",
     "happy-dom": "^7.7.0",
+    "histoire": "^0.11.7",
     "shelljs": "^0.8.5",
-    "svelte": "^3.53.1",
     "vitest": "^0.25.2"
   },
   "volta": {

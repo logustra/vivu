@@ -21,7 +21,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Form validation: [vuelidate](https://vuelidate-next.netlify.app)
 - Localization: [vue-i18n](https://github.com/intlify/vue-i18n-next), [vite-plugins-i18n](https://github.com/intlify/vite-plugin-vue-i18n)
-- UI Documentation: [vitebook](https://github.com/vitebook/vitebook)
+- UI Documentation: [histoire](https://github.com/histoire-dev/histoire)
 - Testing: [vitest](https://vitest.dev/)
 - HTTP request: [umi-request](https://github.com/umijs/umi-request)
 - Git custom hooks: [husky](https://github.com/typicode/husky)
@@ -81,7 +81,6 @@ When you use this template, try follow the checklist to update your info properl
 
 - [ ] Change `name, description, repository, bugs` field in `package.json`
 - [ ] Change the author name in `LICENSE`
-- [ ] Change the site in `.vitebook/config.ts`
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the README(s) and remove modules
