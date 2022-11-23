@@ -56,10 +56,7 @@
   "exclude": [
     "node_modules",
     "public",
-    "commitlint.config.js",
-    "postcss.config.js",
-    "stylelint.config.js",
-    "tailwind.config.js"
+    "commitlint.config.js"
   ],
 
   "references": [

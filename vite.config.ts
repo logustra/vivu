@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import ViteUnocss from 'unocss/vite'
 import ViteUnimport from 'unimport/unplugin'
 import ViteComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -75,7 +76,17 @@ export default defineConfig(({ mode }) => {
       ],
     }),
 
+    /**
+     * DESC:
+     * on-demand icons
+     */
     ViteIcons(),
+
+    /**
+     * DESC:
+     * css utilities
+     */
+    ViteUnocss(),
 
     /**
      * DESC:
@@ -181,7 +192,6 @@ export default defineConfig(({ mode }) => {
         scss: {
           additionalData: `
             @use '@/styles/vendors/element.scss';
-            @use '@/styles/vendors/tailwind.scss';
             @use '@/styles/vendors/nprogress.scss';
             @use '@/styles/index.scss';
           `,

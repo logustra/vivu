@@ -17,7 +17,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - Auto injecting fonts: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
 - Auto importing APIs
 - Auto importing components: [iconify](https://github.com/antfu/vite-plugin-icons), [element-plus](https://github.com/element-plus/element-plus)
-- Just in time css utilities: [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+- Just in time css utilities: [unocss](https://github.com/unocss/unocss)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Form validation: [vuelidate](https://vuelidate-next.netlify.app)
 - Localization: [vue-i18n](https://github.com/intlify/vue-i18n-next), [vite-plugins-i18n](https://github.com/intlify/vite-plugin-vue-i18n)
@@ -36,7 +36,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar): Vue 3 IDE support
 - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify): Icon inline display and autocomplete
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally): All in one i18n support
-- [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss): IDE support for Tailwind CSS
+- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss): IDE support for UnoCSS
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Requirement
