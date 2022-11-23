@@ -33,10 +33,7 @@
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm clean:coverage && vitest --coverage --mode test",
-    "book:dev": "vitebook dev",
-    "book:build": "vitebook build",
-    "book:preview": "vitebook preview"
+    "test": "pnpm clean:coverage && vitest --coverage --mode test"
   },
   "config": {
     "commitizen": {
@@ -85,12 +82,6 @@
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@types/node": "^18.11.9",
-    "@vitebook/client": "^0.100.5",
-    "@vitebook/core": "^0.100.5",
-    "@vitebook/markdown-shiki": "^0.100.5",
-    "@vitebook/markdown-vue": "^0.100.5",
-    "@vitebook/theme-default": "^0.100.5",
-    "@vitebook/vue": "^0.100.5",
     "@vitest/coverage-c8": "^0.25.2",
     "chalk": "^4.1.2",
     "commander": "^7.2.0",
