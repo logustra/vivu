@@ -7,7 +7,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ViteIcons from 'unplugin-icons/vite'
 import ViteIconsResolver from 'unplugin-icons/resolver'
 import ViteFonts from 'vite-plugin-fonts'
-import ViteI18n from '@intlify/vite-plugin-vue-i18n'
+import ViteI18n from '@intlify/unplugin-vue-i18n/vite'
 import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
@@ -92,8 +92,7 @@ export default defineConfig(({ mode }) => {
      * localization
      */
     ViteI18n({
-      include: [resolve(__dirname, 'locales/**')],
-      runtimeOnly: false,
+      defaultSFCLang: 'yaml',
     }),
 
     /**

@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@iconify/json": "^2.1.139",
-    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
+    "@intlify/unplugin-vue-i18n": "^0.8.0",
     "@rollup/plugin-yaml": "^4.0.1",
     "@types/js-cookie": "^3.0.2",
     "@vitejs/plugin-vue": "^3.2.0",
@@ -91,7 +91,7 @@
     "commander": "^7.2.0",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "happy-dom": "^7.7.0",
     "histoire": "^0.11.7",
     "shelljs": "^0.8.5",

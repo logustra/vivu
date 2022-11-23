@@ -6,7 +6,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.2.0
   '@histoire/plugin-vue': ^0.11.7
   '@iconify/json': ^2.1.139
-  '@intlify/vite-plugin-vue-i18n': ^6.0.3
+  '@intlify/unplugin-vue-i18n': ^0.8.0
   '@rollup/plugin-yaml': ^4.0.1
   '@types/js-cookie': ^3.0.2
   '@types/node': ^18.11.9
@@ -26,7 +26,7 @@ specifiers:
   cz-conventional-changelog: ^3.3.0
   dotenv-cli: ^6.0.0
   element-plus: 2.2.19
-  eslint: ^8.27.0
+  eslint: ^8.28.0
   happy-dom: ^7.7.0
   histoire: ^0.11.7
   husky: ^8.0.2
@@ -54,7 +54,7 @@ specifiers:
 
 dependencies:
   '@iconify/json': 2.1.141
-  '@intlify/vite-plugin-vue-i18n': 6.0.3_vite@3.2.4+vue-i18n@9.2.2
+  '@intlify/unplugin-vue-i18n': 0.8.0_vue-i18n@9.2.2
   '@rollup/plugin-yaml': 4.0.1
   '@types/js-cookie': 3.0.2
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
@@ -717,28 +717,33 @@ packages:
     engines: {node: '>= 14'}
     dev: false
 
-  /@intlify/vite-plugin-vue-i18n/6.0.3_vite@3.2.4+vue-i18n@9.2.2:
-    resolution: {integrity: sha512-6SgNzPAOCR90wvt368lKzi7f/5ZEWJn22UCGvhFsP3XvKqlF3cVzojahgQ6o+LTdCkExeM6wPgd+haFf28E9VQ==}
-    engines: {node: '>= 14.6'}
+  /@intlify/unplugin-vue-i18n/0.8.0_vue-i18n@9.2.2:
+    resolution: {integrity: sha512-bqMDYrbmV0oMLGHTdYMUXfcEsy2rPwQnGrQAg4gvw5FimvJfTQt3RliLVayT5ldOfeT2g0IUc/0t7LPeGrFUag==}
+    engines: {node: '>= 14.16'}
     peerDependencies:
       petite-vue-i18n: '*'
-      vite: ^2.9.0 || ^3.0.0
       vue-i18n: '*'
+      vue-i18n-bridge: '*'
     peerDependenciesMeta:
       petite-vue-i18n:
         optional: true
-      vite:
-        optional: true
       vue-i18n:
+        optional: true
+      vue-i18n-bridge:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.4.0_vue-i18n@9.2.2
       '@intlify/shared': 9.3.0-beta.10
       '@rollup/pluginutils': 4.2.1
+      '@vue/compiler-sfc': 3.2.45
       debug: 4.3.4
       fast-glob: 3.2.12
+      js-yaml: 4.1.0
+      json5: 2.2.1
+      pathe: 1.0.0
+      picocolors: 1.0.0
       source-map: 0.6.1
-      vite: 3.2.4_ajklay5k626t46b6fyghkbup3i
+      unplugin: 1.0.0
       vue-i18n: 9.2.2_vue@3.2.45
     transitivePeerDependencies:
       - supports-color
