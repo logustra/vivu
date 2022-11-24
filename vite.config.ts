@@ -15,7 +15,6 @@ import ViteVisualizer from 'rollup-plugin-visualizer'
 export default defineConfig(({ mode }) => {
   const isProd = mode === 'prod'
   const isDev = mode === 'dev'
-  const isTest = mode === 'test'
   const isReport = mode === 'report'
 
   const plugins = [
@@ -116,7 +115,6 @@ export default defineConfig(({ mode }) => {
   if (
     isProd
     || isDev
-    || isTest
     || isReport
   ) plugins.push(Vue())
 
@@ -144,29 +142,6 @@ export default defineConfig(({ mode }) => {
     }
   }
 
-  let test = {}
-  if (isTest) {
-    /**
-     * DESC:
-     * vitest config
-     */
-    test = {
-      include: [
-        'src/components/**/**/*.test.ts',
-        'src/modules/**/components/**/*.test.ts',
-        'src/modules/**/tests/*.test.ts',
-      ],
-      environment: 'happy-dom',
-      coverage: {
-        reporter: [
-          'text',
-          'text-summary',
-          'lcov',
-        ],
-      },
-    }
-  }
-
   if (isReport) {
     plugins.push(
       /**
@@ -185,7 +160,6 @@ export default defineConfig(({ mode }) => {
     plugins,
     optimizeDeps,
     build,
-    test,
 
     css: {
       preprocessorOptions: {

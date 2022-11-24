@@ -33,7 +33,8 @@
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm clean:coverage && vitest --coverage --mode test",
+    "test": "vitest",
+    "test:coverage": "pnpm clean:coverage && vitest --coverage",
     "story:dev": "histoire dev",
     "story:build": "histoire build",
     "story:preview": "histoire preview"
@@ -83,6 +84,7 @@
     "@commitlint/config-conventional": "^17.2.0",
     "@histoire/plugin-vue": "^0.11.7",
     "@types/node": "^18.11.9",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
     "@vitest/coverage-c8": "^0.25.2",
     "chalk": "^4.1.2",
     "commander": "^7.2.0",
