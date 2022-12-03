@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
       },
       presets: [
         'vue',
-        'vuex',
+        'pinia',
         'vue-router',
         'vue-i18n',
       ],
@@ -135,7 +135,7 @@ export default defineConfig(({ mode }) => {
     optimizeDeps = {
       include: [
         'vue',
-        'vuex',
+        'pinia',
         'vue-router',
         'vue-i18n',
       ],

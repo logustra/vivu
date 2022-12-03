@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 
-import useCommon from '@/composables/useCommon'
+import { useCommonStore } from '@/stores/commonStore'
 
-const { setTitle } = useCommon()
+const commonStore = useCommonStore()
 
 onMounted(() => {
-  setTitle('about')
+  commonStore.setTitle('About')
 })
 </script>
 

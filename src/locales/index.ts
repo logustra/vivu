@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import camelCase from 'camelcase'
-import { LANGUAGES } from '@/constants'
+import { LANGUAGES } from '@/constants/commonConstant'
 
 const messages = {}
 const globalLocales = Object.fromEntries(

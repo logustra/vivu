@@ -9,7 +9,8 @@ import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
 import VFormItem from 'molecules/VFormItem/vformItem.vue'
-import useCommon from '@/composables/useCommon'
+
+import { useCommonStore } from '@/stores/commonStore'
 
 const {
   t,
@@ -17,7 +18,7 @@ const {
   locale,
 } = useI18n()
 
-const { setTitle } = useCommon()
+const commonStore = useCommonStore()
 
 function toggleLocales() {
   const locales = availableLocales
@@ -25,7 +26,7 @@ function toggleLocales() {
 }
 
 onMounted(() => {
-  setTitle('home')
+  commonStore.setTitle('Home')
 })
 
 const form = reactive({

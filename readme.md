@@ -10,7 +10,7 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 
 ## Features
 - Faster by default: [vite](https://github.com/vitejs/vite), [vue](https://github.com/vuejs/vue-next), [pnpm](https://github.com/pnpm/pnpm), [esbuild](https://github.com/evanw/esbuild)
-- Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [vuex](https://next.vuex.vuejs.org), [vue-router](https://github.com/vuejs/vue-router-next)
+- Vue 3 ecosystem: [vue](https://github.com/vuejs/vue-next), [pinia](https://pinia.vuejs.org/), [vue-router](https://github.com/vuejs/vue-router-next)
 - Typescript, of course
 - Using new `<script setup>` style
 - Support legacy browsers

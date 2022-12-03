@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import { EXAMPLE_REQUEST } from '@/stores/Example/exampleTypes'
+import { useExampleStore } from '../stores/exampleStore'
 
-const store = useStore()
-const example = store.getters.example
-const exampleRequest = () => store.dispatch(EXAMPLE_REQUEST)
+const exampleStore = useExampleStore()
+const { example } = storeToRefs(exampleStore)
+const { exampleRequest } = exampleStore
 
-onMounted (() => {
-  exampleRequest()
+onMounted(() => {
+  exampleRequest(1)
+
   // eslint-disable-next-line no-console
   console.log(example)
 })

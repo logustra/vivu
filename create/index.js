@@ -17,11 +17,12 @@ const MODULE_TYPES = [
   'components',
   'composables',
   'constants',
+  'locales',
   'services',
   'stores',
   'typings',
   'views',
-  'store',
+  'locale',
   'router'
 ]
 
@@ -30,31 +31,21 @@ let name = 'example'
 const templates = {
   components: {
     view: './create/templates/component/vexample.vue',
-    test: './create/templates/component/vexample.test.ts',
+    test: './create/templates/component/vexample.test.tsx',
   },
 
   modules: {
-    components: './create/templates/module/components/index.ts',
-    composables: './create/templates/module/composables/index.ts',
-    constants: './create/templates/module/constants/index.ts',
+    components: './create/templates/module/components/exampleComponent.vue',
+    composables: './create/templates/module/composables/exampleComposable.ts',
+    constants: './create/templates/module/constants/exampleConstant.ts',
     locales: './create/templates/module/locales/example.en.yaml',
-    services: './create/templates/module/services/index.ts',
-
-    stores: [
-      './create/templates/module/stores/exampleActions.ts',
-      './create/templates/module/stores/exampleGetters.ts',
-      './create/templates/module/stores/exampleMutations.ts',
-      './create/templates/module/stores/exampleState.ts',
-      './create/templates/module/stores/exampleTypes.ts',
-      './create/templates/module/stores/index.ts'
-    ],
-
-    tests: './create/templates/module/tests/exampleIndex.test.ts',
+    services: './create/templates/module/services/exampleService.ts',
+    stores: './create/templates/module/stores/exampleStore.ts',
+    tests: './create/templates/module/tests/exampleIndex.test.tsx',
     typings: './create/templates/module/typings/exampleTypings.ts',
     views: './create/templates/module/views/exampleIndex.vue',
     locale: './create/templates/module/locale.ts',
-    router: './create/templates/module/router.ts',
-    store: './create/templates/module/store.ts'
+    router: './create/templates/module/router.ts'
   }
 }
 
@@ -80,18 +71,8 @@ const createFolder = (type, folder) => {
 
     case 'module':
       switch (folder) {
-        case 'stores':
-          pathModule = `./src/modules/${camelCase(name, { pascalCase: true })}`
-          pathStores = `${pathModule}/stores`
-          path = `${pathStores}/${camelCase(name, { pascalCase: true })}`
-          if (!checkPath(pathModule)) shell.mkdir(pathModule)
-          if (!checkPath(pathStores)) shell.mkdir(pathStores)
-          if (checkPath(pathModule) && checkPath(pathStores) && !checkPath(path)) shell.mkdir(path)
-          break
-
         case 'locale':
         case 'router':
-        case 'store':
           path = `./src/modules/${camelCase(name, { pascalCase: true })}`
           if (!checkPath(path)) shell.mkdir(path)
           break
@@ -125,7 +106,7 @@ const createComponent = {
   },
   test: folderName => {
     const folder = `${createFolder('component', folderName)}/`
-    const file = `v${camelCase(name)}.test.ts`
+    const file = `v${camelCase(name)}.test.tsx`
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -142,7 +123,7 @@ const createComponent = {
 const createModule = {
   components: () => {
     const folder = `${createFolder('module', 'components')}/`
-    const file = 'index.ts'
+    const file = 'exampleComponent.vue'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -157,7 +138,7 @@ const createModule = {
 
   composables: () => {
     const folder = `${createFolder('module', 'composables')}/`
-    const file = 'index.ts'
+    const file = 'exampleComposable.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -172,7 +153,7 @@ const createModule = {
 
   constants: () => {
     const folder = `${createFolder('module', 'constants')}/`
-    const file = 'index.ts'
+    const file = 'exampleConstant.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -202,7 +183,7 @@ const createModule = {
 
   services: () => {
     const folder = `${createFolder('module', 'services')}/`
-    const file = 'index.ts'
+    const file = 'exampleService.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -217,37 +198,22 @@ const createModule = {
 
   stores: () => {
     const folder = `${createFolder('module', 'stores')}/`
-    const file = [
-      `${camelCase(name)}Actions.ts`,
-      `${camelCase(name)}Getters.ts`,
-      `${camelCase(name)}Mutations.ts`,
-      `${camelCase(name)}State.ts`,
-      `${camelCase(name)}Types.ts`,
-      'index.ts'
-    ]
-
-    const path = file.reduce((carry, item) => {
-      return [...carry, folder + item]
-    }, [])
+    const file = 'exampleStore.ts'
+    const path = folder + file
 
     if (!checkPath(path)) {
       shell.touch(path)
+      shell.exec(`cat ${templates.modules.stores} > ${path}`)
 
-      for (const index in templates.modules.stores) {
-        shell.exec(`cat ${templates.modules.stores[index]} > ${path[index]}`)
-
-        log(folder, file[index], true)
-      }
+      log(folder, file, true)
     } else {
-      for (const index in templates.modules.stores) {
-        log(folder, file[index], false)
-      }
+      log(folder, file, false)
     }
   },
 
   tests: () => {
     const folder = `${createFolder('module', 'tests')}/`
-    const file = `${camelCase(name)}.test.ts`
+    const file = 'example.test.tsx'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -262,7 +228,7 @@ const createModule = {
 
   typings: () => {
     const folder = `${createFolder('module', 'typings')}/`
-    const file = `${camelCase(name)}Typings.ts`
+    const file = 'exampleTypings.ts'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -277,7 +243,7 @@ const createModule = {
 
   views: () => {
     const folder = `${createFolder('module', 'views')}/`
-    const file = `${camelCase(name)}Index.vue`
+    const file = 'exampleIndex.vue'
     const path = folder + file
 
     if (!checkPath(path)) {
@@ -319,21 +285,6 @@ const createModule = {
       log(folder, file, false)
     }
   },
-
-  store: () => {
-    const folder = `${createFolder('module', 'store')}/`
-    const file = 'store.ts'
-    const path = folder + file
-
-    if (!checkPath(path)) {
-      shell.touch(path)
-      shell.exec(`cat ${templates.modules.store} > ${path}`)
-
-      log(folder, file, true)
-    } else {
-      log(folder, file, false)
-    }
-  }
 }
 
 const actions = {
@@ -376,7 +327,6 @@ const actions = {
       createModule.views()
       createModule.locale()
       createModule.router()
-      createModule.store()
     } else {
       createModule[moduleType]()
     }
