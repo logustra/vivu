@@ -15,12 +15,12 @@ Learn the design pattern [here](https://github.com/logustra/dave)
 - Using new `<script setup>` style
 - Support legacy browsers
 - Auto injecting fonts: [vite-plugin-fonts](https://github.com/stafyniaksacha/vite-plugin-fonts)
-- Auto importing APIs
-- Auto importing components: [iconify](https://github.com/antfu/vite-plugin-icons), [element-plus](https://github.com/element-plus/element-plus)
+- Auto importing APIs: [unimport](https://github.com/unjs/unimport)
+- Auto importing components: [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components), [iconify](https://github.com/antfu/vite-plugin-icons), [element-plus](https://github.com/element-plus/element-plus)
 - Just in time css utilities: [unocss](https://github.com/unocss/unocss)
 - Composition utilities: [vueuse](https://github.com/vueuse/vueuse)
 - Form validation: [vuelidate](https://vuelidate-next.netlify.app)
-- Localization: [vue-i18n](https://github.com/intlify/vue-i18n-next), [vite-plugins-i18n](https://github.com/intlify/vite-plugin-vue-i18n)
+- Localization: [unplugin-vue-i18n](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n), [vue-i18n](https://github.com/intlify/vue-i18n-next)
 - UI Documentation: [histoire](https://github.com/histoire-dev/histoire)
 - Testing: [vitest](https://vitest.dev/)
 - HTTP request: [umi-request](https://github.com/umijs/umi-request)
