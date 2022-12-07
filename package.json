@@ -47,7 +47,6 @@
   "dependencies": {
     "@iconify/json": "^2.1.139",
     "@intlify/unplugin-vue-i18n": "^0.8.0",
-    "@rollup/plugin-yaml": "^4.0.1",
     "@types/js-cookie": "^3.0.2",
     "@unocss/preset-wind": "^0.46.5",
     "@vitejs/plugin-vue": "^3.2.0",

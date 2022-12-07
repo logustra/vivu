@@ -9,7 +9,6 @@ import ViteIcons from 'unplugin-icons/vite'
 import ViteIconsResolver from 'unplugin-icons/resolver'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteI18n from '@intlify/unplugin-vue-i18n/vite'
-import ViteYaml from '@rollup/plugin-yaml'
 import ViteVisualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
@@ -103,13 +102,8 @@ export default defineConfig(({ mode }) => {
      */
     ViteI18n({
       defaultSFCLang: 'yaml',
+      include: resolve(__dirname, './src/locales/*.yaml'),
     }),
-
-    /**
-     * DESC:
-     * converts YAML files to ES6 modules
-     */
-    ViteYaml(),
   ]
 
   if (

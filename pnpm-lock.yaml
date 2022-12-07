@@ -7,7 +7,6 @@ specifiers:
   '@histoire/plugin-vue': ^0.11.7
   '@iconify/json': ^2.1.139
   '@intlify/unplugin-vue-i18n': ^0.8.0
-  '@rollup/plugin-yaml': ^4.0.1
   '@types/js-cookie': ^3.0.2
   '@types/node': ^18.11.9
   '@unocss/preset-wind': ^0.46.5
@@ -54,7 +53,6 @@ specifiers:
 dependencies:
   '@iconify/json': 2.1.141
   '@intlify/unplugin-vue-i18n': 0.8.0_vue-i18n@9.2.2
-  '@rollup/plugin-yaml': 4.0.1
   '@types/js-cookie': 3.0.2
   '@unocss/preset-wind': 0.46.5
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
@@ -1091,20 +1089,6 @@ packages:
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
-
-  /@rollup/plugin-yaml/4.0.1:
-    resolution: {integrity: sha512-eyftkLWrwaGhgad+gXmisPYXeW3hP1s+lz63mgbur+F/8aKZhPG1Bf8RFNnz0Vhnf3uBimFebZBDwwz6X4KqUQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 5.0.2
-      js-yaml: 4.1.0
-      tosource: 2.0.0-alpha.3
-    dev: false
 
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -5999,11 +5983,6 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
-
-  /tosource/2.0.0-alpha.3:
-    resolution: {integrity: sha512-KAB2lrSS48y91MzFPFuDg4hLbvDiyTjOVgaK7Erw+5AmZXNq4sFRVn8r6yxSLuNs15PaokrDRpS61ERY9uZOug==}
-    engines: {node: '>=10'}
-    dev: false
 
   /totalist/3.0.0:
     resolution: {integrity: sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==}
