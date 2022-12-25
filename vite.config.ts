@@ -10,13 +10,23 @@ import ViteIconsResolver from 'unplugin-icons/resolver'
 import ViteFonts from 'vite-plugin-fonts'
 import ViteI18n from '@intlify/unplugin-vue-i18n/vite'
 import ViteVisualizer from 'rollup-plugin-visualizer'
+import { dependencies } from './package.json'
 
 export default defineConfig(({ mode }) => {
   const isProd = mode === 'prod'
   const isDev = mode === 'dev'
   const isReport = mode === 'report'
 
+  const PRESETS = [
+    'vue',
+    'pinia',
+    'vue-router',
+    'vue-i18n',
+  ]
+
   const plugins = [
+    Vue(),
+
     /**
      * DESC:
      * auto import APIs
@@ -38,12 +48,7 @@ export default defineConfig(({ mode }) => {
       addons: {
         vueTemplate: true,
       },
-      presets: [
-        'vue',
-        'pinia',
-        'vue-router',
-        'vue-i18n',
-      ],
+      presets: PRESETS,
     }),
 
     /**
@@ -106,17 +111,39 @@ export default defineConfig(({ mode }) => {
     }),
   ]
 
-  if (
-    isProd
-    || isDev
-    || isReport
-  ) plugins.push(Vue())
+  const VENDORS = [
+    '@vuelidate/core',
+    '@vuelidate/validators',
+    'element-plus',
+  ]
+
+  function vendorChunks(deps: Record<string, string>) {
+    const chunks = {}
+
+    Object.keys(deps).forEach((dep) => {
+      if (VENDORS.includes(dep))
+        chunks[`vendor.${dep}`] = [dep]
+    })
+
+    return chunks
+  }
 
   let build = {}
   if (isProd) {
     build = {
       target: 'es2015',
       manifest: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            /**
+             * DESC:
+             * split 3rd party libraries
+             */
+            ...vendorChunks(dependencies),
+          },
+        },
+      },
     }
   }
 
@@ -127,12 +154,7 @@ export default defineConfig(({ mode }) => {
      * dependency pre-bundling
      */
     optimizeDeps = {
-      include: [
-        'vue',
-        'pinia',
-        'vue-router',
-        'vue-i18n',
-      ],
+      include: PRESETS,
     }
   }
 
