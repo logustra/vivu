@@ -177,18 +177,6 @@ export default defineConfig(({ mode }) => {
     optimizeDeps,
     build,
 
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-            @use '@/styles/vendors/element.scss';
-            @use '@/styles/vendors/nprogress.scss';
-            @use '@/styles/index.scss';
-          `,
-        },
-      },
-    },
-
     /**
      * DESC:
      * defining aliases

@@ -10,6 +10,8 @@ specifiers:
   '@types/js-cookie': ^3.0.2
   '@types/node': ^18.11.9
   '@unocss/preset-wind': ^0.46.5
+  '@unocss/reset': ^0.48.0
+  '@unocss/transformer-directives': ^0.48.0
   '@vitejs/plugin-vue': ^3.2.0
   '@vitejs/plugin-vue-jsx': ^2.1.1
   '@vitest/coverage-c8': ^0.25.2
@@ -55,6 +57,8 @@ dependencies:
   '@intlify/unplugin-vue-i18n': 0.8.0_vue-i18n@9.2.2
   '@types/js-cookie': 3.0.2
   '@unocss/preset-wind': 0.46.5
+  '@unocss/reset': 0.48.0
+  '@unocss/transformer-directives': 0.48.0
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
   '@vue/compiler-sfc': 3.2.45
   '@vuedx/typecheck': 0.7.6
@@ -910,8 +914,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.10
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/message-compiler': 9.3.0-beta.11
+      '@intlify/shared': 9.3.0-beta.11
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.2.2_vue@3.2.45
@@ -943,11 +947,11 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /@intlify/message-compiler/9.3.0-beta.10:
-    resolution: {integrity: sha512-RoOC6yceOykLRhN0NlbkNOBUx1el6iphx3W8NfOx3jHVNtfT1FYokx14/5sU3F1F0uxeG4sp6q+ppKvaF8o+ww==}
+  /@intlify/message-compiler/9.3.0-beta.11:
+    resolution: {integrity: sha512-gGGfBGzM7JBXp1Q9gbDAy5jELz9ho3ILqnpxp2yp64+gkqohrqc2YXIvCdwZoc6AtKIh/Zmv4sWVqxkvMsBWtQ==}
     engines: {node: '>= 14'}
     dependencies:
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.11
       source-map: 0.6.1
     dev: false
 
@@ -956,8 +960,8 @@ packages:
     engines: {node: '>= 14'}
     dev: false
 
-  /@intlify/shared/9.3.0-beta.10:
-    resolution: {integrity: sha512-h93uAanbAt/XgjDHclrVB7xix6r7Uz11wx0iGNOCdHP7aA2LCJjUT3uNbekJjjbo+Fl5jzTSJZdm2SexzoqhRA==}
+  /@intlify/shared/9.3.0-beta.11:
+    resolution: {integrity: sha512-CtbotesxTRiC3bRyXyv1NG39fkqJ790f8z8xFaeIXSZpOdiyxoh5BIyypCzSFQZDGLwz0Q9gyWbW1XpxQJm68Q==}
     engines: {node: '>= 14'}
     dev: false
 
@@ -977,7 +981,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.4.0_vue-i18n@9.2.2
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.11
       '@rollup/pluginutils': 4.2.1
       '@vue/compiler-sfc': 3.2.45
       debug: 4.3.4
@@ -1502,6 +1506,10 @@ packages:
     resolution: {integrity: sha512-apPWISH2ASKySyp4vBAkEzr5XNJDv4mu26eQ4wvg2a32cHRokUsiHLWFNMDe7oJquivTAOHsXqbLQuR9ePKNSg==}
     dev: false
 
+  /@unocss/core/0.48.0:
+    resolution: {integrity: sha512-WvAvChbJ65l97mHismyApeFVgNeGR4uSZl1BzVY+E/fRmyooE4QxiCm3g2akox6mQryzxvBvgSpP9aPzH676ZQ==}
+    dev: false
+
   /@unocss/inspector/0.46.5:
     resolution: {integrity: sha512-L7bMqtp94qtADeGm0ZU1IPtRatChSqHHxFG2s11+VuElPjktcnwnEfTPY5Obm++sy0kNNPU0M3xJD4TPk/M22g==}
     dependencies:
@@ -1569,6 +1577,10 @@ packages:
     resolution: {integrity: sha512-DU1sisNixEaUsnfDdbU+POaedJLKUtalHnOOce2Txxrcakf7M2/I5/9cRIXt5diVbPjIyoDPcx+7Gn8K0cTGqg==}
     dev: false
 
+  /@unocss/reset/0.48.0:
+    resolution: {integrity: sha512-i7z6Rbs7fXFD3NdlVJViFltpDJUCo5xDm5y01Xaoa4mJQHr/1335Ht0JW/emAJXf170UYSwb2rUeK1J3fty9eg==}
+    dev: false
+
   /@unocss/scope/0.46.5:
     resolution: {integrity: sha512-gAA6a2zwal9GMW6HSp2dofUEzS6ZlLxg6/y8fSHHjJduKRZaq77IP3YdmyT4ZnPBIYsE7+u25lXeDOEFrEMSxg==}
     dev: false
@@ -1590,6 +1602,13 @@ packages:
     dependencies:
       '@unocss/core': 0.46.5
       css-tree: 2.2.1
+    dev: false
+
+  /@unocss/transformer-directives/0.48.0:
+    resolution: {integrity: sha512-Iq55a/vAcTM7xoEtMkqlDP3BT+0ljaqTFctvlentJWDoAjJlbOoPe4gE5BKld5ulWEsV4wvpY2acn/y8SGvJUw==}
+    dependencies:
+      '@unocss/core': 0.48.0
+      css-tree: 2.3.1
     dev: false
 
   /@unocss/transformer-variant-group/0.46.5:
@@ -2636,6 +2655,14 @@ packages:
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
     dependencies:
       mdn-data: 2.0.28
+      source-map-js: 1.0.2
+    dev: false
+
+  /css-tree/2.3.1:
+    resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
+    engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
+    dependencies:
+      mdn-data: 2.0.30
       source-map-js: 1.0.2
     dev: false
 
@@ -4787,6 +4814,10 @@ packages:
 
   /mdn-data/2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
+    dev: false
+
+  /mdn-data/2.0.30:
+    resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
     dev: false
 
   /mdurl/1.0.1:
