@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import VueJSX from '@vitejs/plugin-vue-jsx'
 import ViteUnocss from 'unocss/vite'
 import ViteUnimport from 'unimport/unplugin'
 import ViteComponents from 'unplugin-vue-components/vite'
@@ -26,6 +27,7 @@ export default defineConfig(({ mode }) => {
 
   const plugins = [
     Vue(),
+    VueJSX(),
 
     /**
      * DESC:

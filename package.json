@@ -52,6 +52,7 @@
     "@unocss/reset": "^0.48.0",
     "@unocss/transformer-directives": "^0.48.0",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/compiler-sfc": "^3.2.4",
     "@vuedx/typecheck": "^0.7.6",
     "@vuedx/typescript-plugin-vue": "^0.7.6",
